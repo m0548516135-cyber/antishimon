@@ -1,0 +1,33 @@
+{
+  "name": "אנטישימון — מרשם ראיות",
+  "short_name": "אנטישימון",
+  "description": "מרשם מתועד של גופים ואנשים עם עמדה אנטי-ישראלית מוצהרת או ממצא רשמי בנושא אנטישמיות, לצד רשימת מי שכן לתמוך בהם.",
+  "lang": "he",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0F1522",
+  "theme_color": "#0F1522",
+  "categories": ["news", "reference", "utilities"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "סריקת ברקוד",
+      "short_name": "סריקה",
+      "url": "./index.html#scan",
+      "description": "סריקת ברקוד של מוצר מול המרשם"
+    },
+    {
+      "name": "את מי כן",
+      "short_name": "את מי כן",
+      "url": "./index.html#support",
+      "description": "קולות, ארגונים, ערוצים וחברות לתמיכה"
+    }
+  ]
+}
