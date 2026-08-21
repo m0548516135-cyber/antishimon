@@ -35,7 +35,4 @@ window.ANTISHIMON_CONFIG = {
 
      הקמה: backend/SETUP.md
      ─────────────────────────────────────────────────────────────────── */
-  api: {
-    base: "/antishimon-api"
-  }
 };

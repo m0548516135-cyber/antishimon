@@ -15,10 +15,13 @@
 (function () {
   "use strict";
 
-  var CFG  = (window.ANTISHIMON_CONFIG || {}).api || {};
+  /* אין בלוק api בתצורה = אין שרת בפריסה הזו. זה מצב לגיטימי ולא תקלה:
+     על GitHub Pages, למשל, יש רק קבצים סטטיים. במקרה כזה לא שולחים
+     בכלל בקשת בדיקה — 404 בקונסולה של כל מבקר נראה כמו אתר שבור. */
+  var CFG  = (window.ANTISHIMON_CONFIG || {}).api || null;
   /* הקידומת מגיעה מהתצורה. השרת שמאחוריה כבר יושב תחת /api, ולכן
      הנתיבים כאן הם /login ולא /api/login — אחרת הם היו מוכפלים. */
-  var BASE = String(CFG.base || "").replace(/\/+$/, "");
+  var BASE = String((CFG && CFG.base) || "").replace(/\/+$/, "");
   var LS   = "antishimon:token";
 
   var API = {
@@ -134,6 +137,7 @@
      מציג את פינת החשבון, במקום להציג כפתור שנשבר בלחיצה. */
 
   API.init = function () {
+    if (!CFG) { API.ready = false; return Promise.resolve(null); }
     try { API.token = localStorage.getItem(LS); } catch (_) {}
 
     return req("/health").then(function () {
