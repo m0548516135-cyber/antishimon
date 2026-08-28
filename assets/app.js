@@ -82,7 +82,8 @@ var CFG = window.ANTISHIMON_CONFIG || { remote: "", checkEveryHours: 6 };
 var LSR = {
   bundle:  "antishimon:bundle",
   version: "antishimon:bundle-version",
-  checked: "antishimon:last-check"
+  checked: "antishimon:last-check",
+  status:  "antishimon:last-sync"
 };
 
 /* עדכון שנשמר בביקור קודם גובר על המצורף */
@@ -239,6 +240,13 @@ function incomingList() {
       for (k in e) { c[k] = e[k]; }
       c.incoming = approved.indexOf(e.id) === -1;
       if (c.incoming) c.status = "review";
+      /* מזהה מועמד נראה כך: inc-20260827-03. התאריך שבתוכו הוא היום
+         שבו הסוכן אסף אותו, ולכן הוא מקור אמין יותר מ-generated של
+         הקובץ כולו — שמשתנה בכל ריצה גם לרשומות ישנות. */
+      if (!c.added) {
+        var m = String(e.id || "").match(/^inc-(\d{4})(\d{2})(\d{2})/);
+        c.added = m ? m[1] + "-" + m[2] + "-" + m[3] : (INCOMING.generated || "");
+      }
       return c;
     });
 }
@@ -324,6 +332,10 @@ function loadDB() {
       alternatives: e.alternatives || [],
       correction: e.correction || "",
       updated: e.updated || "",
+      /* שני תאריכים שונים שקל לבלבל ביניהם. `updated` הוא מתי האירוע
+         קרה או מתי המקור פורסם — הוא יכול להיות 2011. `added` הוא מתי
+         הרשומה נכנסה למרשם, וזה מה ש"נוספו לאחרונה" מציג. */
+      added: e.added || "",
       user: !!e.user,
       incoming: !!e.incoming,
       signer: !!e.signer,
@@ -402,7 +414,7 @@ var PLACE_N = 0;
 
 /* ── מצב ──────────────────────────────────────────────────────────────── */
 
-var S = { q: "", cat: "", region: "", country: "", city: "", sev: "", status: "", actor: "", sort: "sev", watchOnly: false };
+var S = { q: "", cat: "", region: "", country: "", city: "", sev: "", status: "", actor: "", sort: "sev", watchOnly: false, fresh: 0 };
 var openId = null, lastFocus = null, VIEW = "registry";
 
 /* המרשם מונה מאות רשומות. רינדור הכול בבת אחת יוצר ~16,000 צמתי DOM
@@ -411,7 +423,155 @@ var openId = null, lastFocus = null, VIEW = "registry";
 var PAGE = 60, shown = PAGE;
 
 function isDefault() {
-  return !S.q && !S.cat && !S.region && !S.country && !S.city && !S.sev && !S.status && !S.actor && !S.watchOnly;
+  return !S.q && !S.cat && !S.region && !S.country && !S.city && !S.sev && !S.status && !S.actor && !S.watchOnly && !S.fresh;
+}
+
+/* ── נוספו לאחרונה ────────────────────────────────────────────────────────
+   `added` הוא תאריך הכניסה למרשם. רשומה בלעדיו אינה "חדשה" — היא פשוט
+   קדמה למעקב, ולכן היא נופלת מחוץ לכל חלון זמן במקום להיערם בראש
+   הרשימה עם תאריך מומצא.
+   ------------------------------------------------------------------------ */
+
+function daysSinceAdded(e) {
+  var d = String(e.added || "").slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) return Infinity;
+  var ms = Date.parse(d + "T00:00:00Z");
+  if (isNaN(ms)) return Infinity;
+  return Math.floor((Date.now() - ms) / 864e5);
+}
+
+function freshCount(days) {
+  return DB.filter(function (e) { return daysSinceAdded(e) <= days; }).length;
+}
+
+var FRESH_WINDOWS = [7, 30];
+
+function freshBar() {
+  var box = $("#freshBar");
+  if (!box) return;
+
+  var n7 = freshCount(7);
+  /* אין מה להציג פס "חדש" כשאין חדש. הוא מופיע מעצמו ברגע שהסוכן
+     היומי מכניס רשומה, ונעלם כשהיא מתיישנת. */
+  if (!n7 && !freshCount(30) && !S.fresh) { box.hidden = true; box.innerHTML = ""; return; }
+  box.hidden = false;
+
+  box.innerHTML =
+    '<span class="fresh__lead">' +
+      '<span class="fresh__pulse" aria-hidden="true"></span>' +
+      t("נוספו לאחרונה") +
+    "</span>" +
+    FRESH_WINDOWS.map(function (d) {
+      var n = freshCount(d);
+      return '<button class="fresh__b" data-fresh="' + d + '"' +
+        ' aria-pressed="' + (S.fresh === d) + '"' + (n ? "" : ' data-empty="1"') + ">" +
+        t(d === 7 ? "השבוע" : "החודש") + "<b>" + n + "</b></button>";
+    }).join("") +
+    (S.fresh
+      ? '<button class="fresh__b fresh__b--off" data-fresh="0">' + t("הכול") + "</button>"
+      : "") +
+    '<button class="fresh__when" data-act="update-health" title="' +
+      esc(t("מתי המרשם עודכן לאחרונה")) + '">' + esc(lastUpdateLabel()) + "</button>";
+}
+
+/* התווית שליד הפס אומרת מתי הנתונים עצמם רועננו — לא מתי נטענה
+   הכותרת. משתמש שרואה "עודכן היום" ומגלה שאין כלום חדש צריך שהמספר
+   יסביר את עצמו, ולכן הוא לחיץ ופותח את חלונית המצב. */
+/* ── חלונית מצב העדכון ────────────────────────────────────────────────────
+   השאלה שהיא עונה עליה: האם המרשם באמת מתעדכן, או שהוא רק אומר שכן.
+   לכן היא מפרידה בין שלושה דברים שקל לערבב — מתי נבדק, מתי התקבל
+   עדכון, ומה בפועל נכנס — ומאפשרת בדיקה חוזרת מיידית.
+   ------------------------------------------------------------------------ */
+
+function updateHealthModal() {
+  var d = dataFreshness();
+  var sync = lsGet(LSR.status, null);
+  var checked = +lsGet(LSR.checked, 0);
+
+  function row(label, value, tone) {
+    return '<div class="uh__r' + (tone ? " uh__r--" + tone : "") + '">' +
+      "<dt>" + esc(label) + "</dt><dd>" + value + "</dd></div>";
+  }
+  /* "לפני 3 שעות" מול "3 hours ago" — סדר המילים הפוך, ולכן הניסוח
+     נבנה שלם בכל שפה. הדבקה של מילים מתורגמות מייצרת כאן אנגלית
+     שבורה, וזו בדיוק התלונה שהובילה לשכתוב שכבת התרגום. */
+  function ago(ms) {
+    if (!ms) return t("מעולם");
+    var h = Math.floor((Date.now() - ms) / 36e5);
+    if (h < 1) return t("לפני פחות משעה");
+    if (h < 24) {
+      return LANG === "en" ? h + (h === 1 ? " hour ago" : " hours ago")
+                           : "לפני " + h + (h === 1 ? " שעה" : " שעות");
+    }
+    var dd = Math.floor(h / 24);
+    return LANG === "en" ? dd + (dd === 1 ? " day ago" : " days ago")
+                         : "לפני " + dd + (dd === 1 ? " יום" : " ימים");
+  }
+
+  /* "בריא" נמדד מול הקצב המובטח: הסוכן רץ כל יום, אז נתונים בני
+     יומיים סבירים, בני שבוע כבר אומרים שמשהו לא עובד. */
+  var tone = d.days == null ? "warn" : d.days <= 2 ? "ok" : d.days <= 6 ? "warn" : "bad";
+  var verdict = d.days == null ? t("לא ידוע")
+    : tone === "ok"   ? t("מתעדכן כסדרו")
+    : tone === "warn" ? t("לא התקבל עדכון כמה ימים")
+                      : t("העדכון תקוע — כדאי לבדוק את הסוכן היומי");
+
+  openModal(
+    '<h2 class="modal__h">' + t("מצב עדכון הנתונים") + "</h2>" +
+    '<p class="modal__p">' +
+      t("המרשם נבנה מסוכן שרץ כל יום ומפרסם חבילת נתונים. כאן אפשר לראות אם היא באמת מגיעה.") +
+    "</p>" +
+
+    '<div class="uh__v uh__v--' + tone + '">' + esc(verdict) + "</div>" +
+
+    '<dl class="uh">' +
+      row(t("גרסת הנתונים שבידכם"), '<code>' + esc(d.version || "—") + "</code>") +
+      row(t("גיל הנתונים"),
+        d.days == null ? "—"
+        : d.days === 0 ? "<b>" + t("היום") + "</b>"
+        : "<b>" + d.days + "</b> " + t(d.days === 1 ? "יום" : "ימים"), tone) +
+      row(t("בדיקה אחרונה מול השרת"), esc(ago(checked))) +
+      row(t("תוצאת הבדיקה האחרונה"),
+        !sync ? esc(t("עוד לא נבדק"))
+        : sync.ok ? '<span class="uh__ok">' + t("הצליחה") + "</span>"
+                  : '<span class="uh__bad">' + t("נכשלה") + " — " + esc(sync.error || "") + "</span>",
+        sync && !sync.ok ? "bad" : "") +
+      row(t("רשומות מוצגות"), "<b>" + DB.length + "</b>") +
+      row(t("נוספו בשבוע האחרון"), "<b>" + freshCount(7) + "</b>") +
+      row(t("נוספו בחודש האחרון"), "<b>" + freshCount(30) + "</b>") +
+      row(t("ממתינים לאישור"), "<b>" + DB.filter(function (e) { return e.incoming; }).length + "</b>") +
+    "</dl>" +
+
+    '<div class="acts">' +
+      '<button class="btn" data-act="update-recheck">' + t("בדיקה עכשיו") + "</button>" +
+      '<button class="tl" data-act="close-modal">' + t("סגירה") + "</button>" +
+    "</div>"
+  );
+}
+
+function lastUpdateLabel() {
+  var d = dataFreshness();
+  if (!d.date) return t("מצב עדכון");
+  if (d.days === 0) return t("עודכן היום");
+  if (d.days === 1) return t("עודכן אתמול");
+  return LANG === "en" ? "Updated " + d.days + " days ago"
+                       : "עודכן לפני " + d.days + " ימים";
+}
+
+/* מקור האמת לרעננות: חותמת הגרסה של החבילה שהאפליקציה מחזיקה בפועל,
+   ולא מתי היא ניסתה לבדוק. בדיקה שנכשלה אינה עדכון. */
+function dataFreshness() {
+  /* דרך lsGet ולא getItem: הערך נשמר כ-JSON, ולכן קריאה גולמית
+     מחזירה אותו עם המרכאות — והתאריך שבתוכו מפסיק להתפענח. */
+  var v = lsGet(LSR.version, "") || (META.updated || "");
+  var m = String(v).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return { date: "", days: null, version: v };
+  var ms = Date.parse(m[0] + "T00:00:00Z");
+  return {
+    date: m[0],
+    days: isNaN(ms) ? null : Math.floor((Date.now() - ms) / 864e5),
+    version: v
+  };
 }
 
 /* ── חיפוש וסינון ─────────────────────────────────────────────────────── */
@@ -467,6 +627,7 @@ function filtered(skip) {
     if (S.status && e.status !== S.status) return false;
     if (S.actor && e.actor !== S.actor) return false;
     if (S.watchOnly && !isWatched(e.id)) return false;
+    if (S.fresh && daysSinceAdded(e) > S.fresh) return false;
     return true;
   });
 }
@@ -480,6 +641,13 @@ var SORT = {
     return b.severity - a.severity || b.sources.length - a.sources.length || a.name.localeCompare(b.name, "he");
   },
   recent:  function (a, b) { return dateKey(b.updated).localeCompare(dateKey(a.updated)); },
+  /* מיון לפי כניסה למרשם. רשומה בלי תאריך כניסה יורדת לתחתית ולא
+     מתחזה לחדשה, ובתוך אותו יום מכריעה החומרה. */
+  newest:  function (a, b) {
+    var da = daysSinceAdded(a), db = daysSinceAdded(b);
+    if (da !== db) return da - db;
+    return b.severity - a.severity || b.sources.length - a.sources.length;
+  },
   sources: function (a, b) { return b.sources.length - a.sources.length || b.severity - a.severity; },
   name:    function (a, b) { return a.name.localeCompare(b.name, "he"); }
 };
@@ -647,6 +815,8 @@ function render() {
       t(stPub === 1 ? "עדות" : "עדויות") + " · " + t("כל אחת אושרה לפני פרסום");
     return;
   }
+
+  freshBar();
 
   /* החלוקה הראשית: מה בדיוק נטען */
   $("#split").innerHTML =
@@ -3235,6 +3405,15 @@ function copyText(txt, ok) {
 function byId(id) { return DB.filter(function (x) { return x.id === id; })[0]; }
 
 function fillSelects() {
+  /* נקרא גם בהחלפת שפה, ולכן חייב להיות אידמפוטנטי: בלי הניקוי כל
+     החלפה הייתה מוסיפה עוד עותק של כל אפשרות לרשימה.
+     האפשרות הראשונה ("הכול") סטטית ב-HTML ומתורגמת דרך data-i18n. */
+  ["#fActor", "#fStatus", "#fRegion"].forEach(function (sel) {
+    var el = $(sel), keep = el.value;
+    while (el.options.length > 1) el.remove(1);
+    el.dataset.want = keep;
+  });
+
   ACTORS.forEach(function (a) {
     var o = document.createElement("option");
     o.value = a.key; o.dataset.label = a.label; o.textContent = tx('actor', a.key, a.label);
@@ -3251,6 +3430,15 @@ function fillSelects() {
     o.value = r.key; o.textContent = regName(r.key, r.label);
     $("#fRegion").appendChild(o);
   });
+
+  /* מחזירים את הבחירה שהייתה. מי שסינן לפי "בריטניה" והחליף שפה
+     לא ביקש לאפס את הסינון. */
+  ["#fActor", "#fStatus", "#fRegion"].forEach(function (sel) {
+    var el = $(sel);
+    if (el.dataset.want) el.value = el.dataset.want;
+    delete el.dataset.want;
+  });
+
   fillCountries();
 }
 
@@ -3312,24 +3500,34 @@ function setTheme(t) {
 
 /* ── משיכת עדכון ──────────────────────────────────────────────────────── */
 
-function syncRemote() {
+function syncRemote(force) {
   var base = String(CFG.remote || "").replace(/\/+$/, "");
-  if (!base) return;                       /* מצב מקומי — אין מה למשוך */
+  if (!base) return Promise.resolve();      /* מצב מקומי — אין מה למשוך */
 
   var gap = (CFG.checkEveryHours || 6) * 3600 * 1000;
   var last = +lsGet(LSR.checked, 0);
-  if (Date.now() - last < gap) return;
+  if (!force && Date.now() - last < gap) return Promise.resolve();
 
   var bust = "?t=" + Date.now();
 
-  fetch(base + "/version.json" + bust, { cache: "no-store" })
-    .then(function (r) { return r.ok ? r.json() : null; })
+  return fetch(base + "/version.json" + bust, { cache: "no-store" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("version.json — " + r.status);
+      return r.json();
+    })
     .then(function (v) {
       lsSet(LSR.checked, Date.now());
+      /* רושמים גם בדיקה שלא הביאה כלום. בלי זה אי אפשר להבחין בין
+         "אין מה לעדכן" לבין "הבדיקה נכשלה בשקט" — וזו בדיוק ההבחנה
+         שחלונית המצב אמורה לענות עליה. */
+      lsSet(LSR.status, { ok: true, at: Date.now(), remote: v && v.version, entries: v && v.entries });
       if (!v || !v.version) return null;
       if (v.version === lsGet(LSR.version, "")) return null;   /* כבר מעודכן */
       return fetch(base + "/data-bundle.json" + bust, { cache: "no-store" })
-        .then(function (r) { return r.ok ? r.json() : null; });
+        .then(function (r) {
+          if (!r.ok) throw new Error("data-bundle.json — " + r.status);
+          return r.json();
+        });
     })
     .then(function (b) {
       if (!b || !b.registry || !Array.isArray(b.registry.entries) || !b.registry.entries.length) return;
@@ -3350,9 +3548,14 @@ function syncRemote() {
 
       loadDB(); fillCountries(); render();
       var diff = DB.length - was;
-      toast(diff > 0 ? "עודכן — " + diff + " רשומות חדשות" : "המאגר עודכן");
+      toast(diff > 0 ? t("עודכן") + " — " + diff + " " + t("רשומות חדשות") : t("המאגר עודכן"));
     })
-    .catch(function () { /* אין רשת או שהשרת לא זמין — ממשיכים עם מה שיש */ });
+    .catch(function (err) {
+      /* אין רשת או שהשרת לא זמין — ממשיכים עם מה שיש, אבל מסמנים.
+         אתר שמראה נתונים מלפני שבועיים ואומר "הכול תקין" גרוע יותר
+         מאתר שאומר שהבדיקה נכשלה. */
+      lsSet(LSR.status, { ok: false, at: Date.now(), error: String(err && err.message || err) });
+    });
 }
 
 /* ── אתחול ────────────────────────────────────────────────────────────── */
@@ -3482,7 +3685,14 @@ function init() {
       }
 
       switch (a) {
-        case "lang": setLang(LANG === "he" ? "en" : "he"); render(); return;
+        /* התפריטים הנפתחים נבנים ב-JS, ולכן applyStaticLang לא נוגע
+           בהם — בלי בנייה מחדש הם נשארים בשפה הקודמת ומופיע "All"
+           באמצע ממשק עברי. */
+        case "lang":
+          setLang(LANG === "he" ? "en" : "he");
+          fillSelects();
+          render();
+          return;
         case "theme":
           setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
           return;
@@ -3653,8 +3863,15 @@ function init() {
         case "clearq":
           q.value = ""; S.q = ""; $(".seek__x").hidden = true; render(); q.focus();
           return;
+        case "update-health": updateHealthModal(); return;
+        case "update-recheck": {
+          var rb = tgt;
+          rb.disabled = true; rb.textContent = t("בודק…");
+          syncRemote(true).then(function () { updateHealthModal(); });
+          return;
+        }
         case "clearfilters":
-          S = { q: "", cat: "", region: "", country: "", city: "", sev: "", status: "", actor: "", sort: S.sort, watchOnly: false };
+          S = { q: "", cat: "", region: "", country: "", city: "", sev: "", status: "", actor: "", sort: S.sort, watchOnly: false, fresh: 0 };
           q.value = ""; $(".seek__x").hidden = true;
           ["#fRegion", "#fCity", "#fActor", "#fStatus"].forEach(function (s) { $(s).value = ""; });
           fillCountries(); render();
@@ -3717,6 +3934,17 @@ function init() {
 
     var sp = tgt.closest(".sp");
     if (sp) { S.sev = sp.dataset.sev; reRender(); return; }
+
+    var fr = tgt.closest(".fresh__b");
+    if (fr) {
+      var w = +fr.dataset.fresh || 0;
+      /* לחיצה שנייה על אותו חלון מבטלת אותו. אחרת הדרך היחידה לצאת
+         מ"השבוע" היא למצוא את כפתור האיפוס, וזה לא ברור מאליו. */
+      S.fresh = (S.fresh === w) ? 0 : w;
+      if (S.fresh) { S.sort = "newest"; $("#fSort").value = "newest"; }
+      reRender();
+      return;
+    }
 
     var chip = tgt.closest(".chip");
     if (chip) { S.cat = chip.dataset.cat; reRender(); return; }

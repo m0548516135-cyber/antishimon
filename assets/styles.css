@@ -1012,3 +1012,77 @@ a { color: var(--brass); text-underline-offset: 3px; }
   .rv, .rv.is-in { opacity: 1; transform: none; transition: none; }
   .hero__bg { transform: none !important; opacity: .8 !important; }
 }
+
+/* ══════ נוספו לאחרונה ══════
+   פס דק מעל החלוקה הראשית. הוא לא צועק — רשומה חדשה אינה חשובה יותר
+   מרשומה ותיקה, היא רק חדשה — ולכן הוא מסתפק בנקודה פועמת ובמספרים. */
+
+.fresh__bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+  margin-block-end: .9rem; padding-block-end: .9rem;
+  border-block-end: 1px solid var(--line);
+  min-block-size: 34px;                      /* שריון גובה — בלעדיו הפס דוחף את הרשת בטעינה */
+}
+.fresh__lead {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font: 600 .78rem/1 var(--f-body); letter-spacing: .02em;
+  color: var(--txt-2); margin-inline-end: .2rem;
+}
+.fresh__pulse {
+  inline-size: 7px; block-size: 7px; border-radius: 50%;
+  background: var(--brass); box-shadow: 0 0 0 0 rgba(216,169,59,.55);
+  animation: freshPulse 2.4s ease-out infinite;
+}
+@keyframes freshPulse {
+  70%  { box-shadow: 0 0 0 7px rgba(216,169,59,0); }
+  100% { box-shadow: 0 0 0 0 rgba(216,169,59,0); }
+}
+.fresh__b {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .3rem .7rem; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent;
+  color: var(--txt-2); font: 500 .8rem/1 var(--f-body);
+  cursor: pointer; transition: border-color .15s, color .15s, background .15s;
+}
+.fresh__b b { font: 600 .74rem/1 var(--f-data); color: var(--txt-3); }
+.fresh__b:hover { border-color: var(--brass); color: var(--txt-1); }
+.fresh__b[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--brass) 16%, transparent);
+  border-color: var(--brass); color: var(--txt-1);
+}
+.fresh__b[aria-pressed="true"] b { color: var(--brass); }
+.fresh__b[data-empty="1"] { opacity: .45; }
+.fresh__b--off { border-style: dashed; }
+.fresh__when {
+  margin-inline-start: auto; padding: .3rem .55rem;
+  border: 0; background: transparent; cursor: pointer;
+  color: var(--txt-3); font: 500 .74rem/1 var(--f-data);
+  border-block-end: 1px dotted var(--txt-3);
+}
+.fresh__when:hover { color: var(--brass); border-block-end-color: var(--brass); }
+
+@media (max-width: 560px) {
+  .fresh__when { margin-inline-start: 0; inline-size: 100%; text-align: start; }
+}
+
+/* ══════ חלונית מצב עדכון ══════ */
+
+.uh { margin: 1rem 0 0; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.uh__r { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .6rem .8rem; background: var(--card); }
+.uh__r dt { color: var(--txt-2); font: 500 .82rem/1.4 var(--f-body); }
+.uh__r dd { margin: 0; color: var(--txt-1); font: 500 .82rem/1.4 var(--f-data); text-align: end; }
+/* חותמת גרסה היא מחרוזת לטינית בתוך שורה עברית. בלי בידוד דו-כיווני
+   הדפדפן מזיז את השעה לפני התאריך והתוצאה פשוט שגויה. */
+.uh__r dd code { font: 500 .76rem/1.4 var(--f-data); color: var(--txt-2); direction: ltr; unicode-bidi: isolate; display: inline-block; }
+.uh__r--ok   dd b { color: var(--ok, #4E93B8); }
+.uh__r--warn dd b { color: var(--s3); }
+.uh__r--bad  dd b, .uh__bad { color: var(--s4); }
+.uh__ok { color: var(--s2); }
+
+.uh__v {
+  margin-block-start: 1rem; padding: .7rem .9rem; border-radius: 10px;
+  font: 600 .9rem/1.4 var(--f-body); border: 1px solid;
+}
+.uh__v--ok   { color: var(--s2); border-color: color-mix(in srgb, var(--s2) 45%, transparent); background: color-mix(in srgb, var(--s2) 10%, transparent); }
+.uh__v--warn { color: var(--s3); border-color: color-mix(in srgb, var(--s3) 45%, transparent); background: color-mix(in srgb, var(--s3) 10%, transparent); }
+.uh__v--bad  { color: var(--s4); border-color: color-mix(in srgb, var(--s4) 45%, transparent); background: color-mix(in srgb, var(--s4) 10%, transparent); }
