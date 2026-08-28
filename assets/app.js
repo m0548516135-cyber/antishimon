@@ -426,6 +426,72 @@ function isDefault() {
   return !S.q && !S.cat && !S.region && !S.country && !S.city && !S.sev && !S.status && !S.actor && !S.watchOnly && !S.fresh;
 }
 
+/* ── מצב מפתח ─────────────────────────────────────────────────────────────
+   מי שרואה כלי צוות נקבע בשרת ובשרת בלבד: התפקיד מגיע מ-/me, אחרי
+   אימות הטוקן. אין כאן בדיקת כתובת מייל — כתובת שכתובה בקוד לקוח היא
+   הצעה, לא הרשאה, וכל אחד יכול לערוך אותה בדפדפן ולהעניק לעצמו גישה.
+
+   מה שהפונקציה הזאת מסתירה הוא **תצוגה** בלבד. גם אם מישהו יכריח את
+   הדפדפן להציג את הכפתורים, הפעולה עצמה תיבדק שוב בשרת ותידחה. זה
+   העיקרון שמפריד בין ממשק מסודר לבין אבטחה.
+   ------------------------------------------------------------------------ */
+
+function isDev() { return !!(API.user && API.user.role === "admin"); }
+
+/* ── שער הכניסה ───────────────────────────────────────────────────────────
+   המרשם נוקב בשמות של חברות ושל אנשים אמיתיים. דרישת חשבון היא הדבר
+   היחיד שהופך "מישהו ראה משהו באינטרנט" למשהו שאפשר לעמוד מאחוריו:
+   יש למי לפנות, אפשר להשעות מי שמנצל לרעה, ולכל הגשה יש בעלים.
+
+   המימוש כאן הוא **חזית**. הוא מסתיר את הממשק, לא את הנתונים — קובץ
+   data.js נמצא בדפדפן ומי שיודע לפתוח כלי פיתוח יקרא אותו בלי קשר
+   לשער. חסימה אמיתית מחייבת שהנתונים עצמם יגיעו מהשרת אחרי אימות
+   טוקן, וזה שינוי ארכיטקטורה שלם.
+
+   כשאין שרת אי אפשר לרשום איש, ולכן השער אינו נסגר — אתר שדורש
+   הרשמה שאי אפשר לבצע הוא אתר מת. במקום זה מוצגת הודעה כנה.
+   ------------------------------------------------------------------------ */
+
+var GATE_ON = true;
+
+function gateNeeded() { return GATE_ON && API.ready && !API.user; }
+
+/* הכתב-ויתור וְהשער הם שני מסכים חוסמים. הצגתם יחד נראית כמו תקלה,
+   ולכן הכתב-ויתור ממתין: מי שעוד לא נכנס יקרא אותו אחרי הכניסה, שם
+   הוא גם רלוונטי — הוא מסביר איך לקרוא את המרשם, לא איך להירשם. */
+function maybeDisclaimer() {
+  if (gateNeeded()) return;
+  if (disclaimerSeen()) return;
+  setTimeout(disclaimerModal, 350);
+}
+
+function gate() {
+  var el = $("#gate");
+  if (!el) return;
+
+  if (!gateNeeded()) {
+    el.hidden = true;
+    document.body.classList.remove("is-gated");
+    return;
+  }
+
+  el.hidden = false;
+  document.body.classList.add("is-gated");
+  el.innerHTML =
+    '<div class="gate__card">' +
+      '<span class="gate__tag">' + t("כניסה למרשם") + "</span>" +
+      '<h2 class="gate__h">' + t("המרשם פתוח לבעלי חשבון") + "</h2>" +
+      '<p class="gate__p">' +
+        t("כאן נקובים שמות של חברות, מוסדות ואנשים אמיתיים. חשבון נדרש כדי שלכל צפייה והגשה יהיה בעלים — ולא כדי לאסוף עליכם מידע: מספיקים שם תצוגה, מייל וסיסמה.") +
+      "</p>" +
+      '<div class="gate__acts">' +
+        '<button class="btn" data-act="signup">' + t("פתיחת חשבון") + "</button>" +
+        '<button class="tl" data-act="signin">' + t("כבר יש לי חשבון") + "</button>" +
+      "</div>" +
+      '<button class="tl gate__terms" data-act="terms">' + t("תנאים ופרטיות") + "</button>" +
+    "</div>";
+}
+
 /* ── נוספו לאחרונה ────────────────────────────────────────────────────────
    `added` הוא תאריך הכניסה למרשם. רשומה בלעדיו אינה "חדשה" — היא פשוט
    קדמה למעקב, ולכן היא נופלת מחוץ לכל חלון זמן במקום להיערם בראש
@@ -470,8 +536,13 @@ function freshBar() {
     (S.fresh
       ? '<button class="fresh__b fresh__b--off" data-fresh="0">' + t("הכול") + "</button>"
       : "") +
-    '<button class="fresh__when" data-act="update-health" title="' +
-      esc(t("מתי המרשם עודכן לאחרונה")) + '">' + esc(lastUpdateLabel()) + "</button>";
+    /* מצב העדכון הוא כלי תחזוקה: הוא עונה על "האם הצינור עובד", לא על
+       "מה יש במרשם". למבקר רגיל הוא רעש, ולכן הוא נשאר אצל הצוות. */
+    (isDev()
+      ? '<button class="fresh__when" data-act="update-health" title="' +
+          esc(t("מתי המרשם עודכן לאחרונה")) + '">' +
+          '<span class="devtag">DEV</span>' + esc(lastUpdateLabel()) + "</button>"
+      : "");
 }
 
 /* התווית שליד הפס אומרת מתי הנתונים עצמם רועננו — לא מתי נטענה
@@ -544,6 +615,60 @@ function updateHealthModal() {
 
     '<div class="acts">' +
       '<button class="btn" data-act="update-recheck">' + t("בדיקה עכשיו") + "</button>" +
+      '<button class="tl" data-act="close-modal">' + t("סגירה") + "</button>" +
+    "</div>"
+  );
+}
+
+/* ── הגדרות מפתחים ────────────────────────────────────────────────────────
+   ריכוז של כל מה ששייך לתחזוקה ולא לקריאה במרשם. הוא נפתח רק לחשבון
+   שהשרת סימן כצוות — ומה שיש בו הוא תצוגה; כל פעולה נבדקת שוב בשרת.
+   ------------------------------------------------------------------------ */
+
+function devToolsModal() {
+  if (!isDev()) return;
+
+  var pend = DB.filter(function (e) { return e.incoming; }).length;
+  var noSrc = DB.filter(function (e) { return !e.sources.length; }).length;
+  var oneSrc = DB.filter(function (e) { return e.sources.length === 1; }).length;
+  var unver = DB.filter(function (e) { return e.status === "review"; }).length;
+  var d = dataFreshness();
+
+  function line(k, v, act) {
+    return '<div class="uh__r"><dt>' + esc(k) + "</dt><dd>" +
+      (act ? '<button class="tl" data-act="' + act + '">' + v + "</button>" : v) +
+      "</dd></div>";
+  }
+
+  openModal(
+    '<h2 class="modal__h"><span class="devtag">DEV</span> ' + t("הגדרות מפתחים") + "</h2>" +
+    '<p class="modal__p">' +
+      t("החלק הזה גלוי רק לחשבון צוות. התפקיד נקבע בשרת — לא בדפדפן — ולכן עריכת הקוד כאן לא תפתח אותו לאיש.") +
+    "</p>" +
+
+    '<h3 class="dos__h">' + t("מצב הנתונים") + "</h3>" +
+    '<dl class="uh">' +
+      line(t("גרסת הנתונים"), "<code>" + esc(d.version || "—") + "</code>") +
+      line(t("מצב העדכון היומי"), t("פתיחת הדוח"), "update-health") +
+      line(t("תור ביקורת בשרת"), t("פתיחה"), "queue") +
+    "</dl>" +
+
+    '<h3 class="dos__h">' + t("איכות המרשם") + "</h3>" +
+    '<dl class="uh">' +
+      line(t("סה״כ רשומות"), "<b>" + DB.length + "</b>") +
+      line(t("נאספו אוטומטית — לא נבדקו"), "<b>" + pend + "</b>") +
+      line(t("בסטטוס ״לא אומת״"), "<b>" + unver + "</b>") +
+      line(t("בלי מקור כלל"), "<b>" + noSrc + "</b>") +
+      line(t("עם מקור יחיד"), "<b>" + oneSrc + "</b>") +
+    "</dl>" +
+
+    '<p class="note note--soft">' +
+      "<b>" + t("אישור ודחייה הם מקומיים.") + "</b> " +
+      t("הם נשמרים בדפדפן הזה בלבד ואינם משנים את מה שמבקרים אחרים רואים. אישור אמיתי מחייב שרת פעיל, ואז הוא עובר דרך תור הביקורת.") +
+    "</p>" +
+
+    '<div class="acts">' +
+      '<button class="tl" data-danger="1" data-act="dev-clear-local">' + t("איפוס אישורים מקומיים") + "</button>" +
       '<button class="tl" data-act="close-modal">' + t("סגירה") + "</button>" +
     "</div>"
   );
@@ -763,7 +888,8 @@ function cardHTML(e, i) {
     '<span class="card__top">' +
       cardMark(e) +
       '<span class="card__cat">' + esc(tx('catShort', e.type, cat.short || cat.label || '')) + "</span>" +
-      (e.incoming ? '<span class="fresh">' + t("חדש · לאישור") + "</span>" : "") +
+      /* "לאישור" רמז שיש תור אנושי שהרשומה עומדת בו. אין. */
+      (e.incoming ? '<span class="fresh">' + t("נאספה אוטומטית") + "</span>" : "") +
       bars(e.severity, "card__sev") +
     "</span>" +
     '<span class="card__name">' + esc(dispName(e)) + "</span>" +
@@ -1763,13 +1889,23 @@ function openEntry(id) {
 
   var note = "";
   if (e.incoming) {
-    note = '<p class="note"><b>מועמד מהסוכן היומי — טרם אושר.</b> ' +
-      'הרשומה נאספה אוטומטית ב־' + esc(fmtDate((INCOMING || {}).generated)) + '. ' +
-      'קראו את המקורות ואשרו או דחו לפני שמסתמכים עליה.' +
-      '<span class="note__acts">' +
-        '<button class="btn" data-act="approve" data-id="' + esc(e.id) + '">אישור לרשומה</button>' +
-        '<button class="tl" data-act="reject" data-id="' + esc(e.id) + '">דחייה והסרה</button>' +
-      "</span></p>";
+    /* נוסח מדויק במכוון. קודם היה כתוב כאן "טרם אושר" עם כפתורי אישור
+       גלויים לכל מבקר — מה שהשתמע ממנו הוא שיש מי שבודק, ושהמבקר הוא
+       הוא. שניהם לא נכונים: הרשומה נאספה בידי סוכן אוטומטי, עברה בדיקה
+       טכנית בלבד (מקורות קיימים, קישורים נפתחים, אין כפילות), ואיש עדיין
+       לא קרא אותה. זה מה שהכיתוב אומר עכשיו. */
+    note = '<p class="note"><b>' + t("נאספה אוטומטית — איש עדיין לא בדק אותה.") + "</b> " +
+      t("הרשומה נאספה בידי סוכן אוטומטי ב־") + esc(fmtDate(e.added || (INCOMING || {}).generated)) + ". " +
+      t("היא עברה בדיקה טכנית בלבד: שיש מקורות, שהקישורים נפתחים, ושאין כפילות. תוכן הטענה עצמה טרם נבדק בידי אדם.") + " " +
+      "<b>" + t("אל תסתמכו עליה — פתחו את המקורות ובדקו בעצמכם.") + "</b>" +
+      (isDev()
+        ? '<span class="note__acts">' +
+            '<span class="devtag">DEV</span>' +
+            '<button class="btn" data-act="approve" data-id="' + esc(e.id) + '">' + t("אישור לרשומה") + "</button>" +
+            '<button class="tl" data-act="reject" data-id="' + esc(e.id) + '">' + t("דחייה והסרה") + "</button>" +
+          "</span>"
+        : "") +
+      "</p>";
   } else if (e.status === "retracted") {
     note = '<p class="note note--out"><b>' + t("הרשומה בוטלה.") + "</b> " +
       esc(e.correction || t("הדיווח הופרך או תוקן. הרשומה נשמרת לשקיפות בלבד.")) + "</p>";
@@ -1777,7 +1913,7 @@ function openEntry(id) {
     note = '<p class="note"><b>' + t("שנוי במחלוקת.") + "</b> " +
       esc(tx("statusDesc", e.status, st.desc)) + " " + t("קראו את המקורות משני הצדדים.") + "</p>";
   } else if (e.status === "review") {
-    note = '<p class="note"><b>' + t("בבדיקה.") + "</b> " + esc(tx("statusDesc", e.status, st.desc)) + "</p>";
+    note = '<p class="note"><b>' + t("לא אומת.") + "</b> " + esc(tx("statusDesc", e.status, st.desc)) + "</p>";
   } else if (!e.sources.length) {
     note = '<p class="note"><b>' + t("אין מקורות.") + "</b> " + t("רשומה ללא מקור אינה ראיה לכלום.") + "</p>";
   } else if (e.sources.length === 1) {
@@ -2721,6 +2857,8 @@ function authModal(mode, next) {
     p.then(function () {
       closeModal();
       renderAccount();
+      gate();
+      maybeDisclaimer();
       /* אחרי כניסה יש עוד מה להראות: ההגשות שלי, שקודם לא היו נראות. */
       stLoad().then(render);
       render();
@@ -2746,6 +2884,9 @@ function accountModal() {
     '<h3 class="dos__h">' + t("ההגשות שלי") + "</h3>" +
     '<div id="myList" class="newsl"><p class="item__why">' + t("טוען…") + "</p></div>" +
     '<div class="acts">' +
+      (isDev()
+        ? '<button class="btn" data-act="devtools">' + t("הגדרות מפתחים") + "</button>"
+        : "") +
       '<button class="tl" data-act="signout">' + t("יציאה מהחשבון") + "</button>" +
       '<button class="tl" data-act="close-modal">' + t("סגירה") + "</button>" +
     "</div>"
@@ -3484,14 +3625,9 @@ function fillCities() {
   sel.parentElement.hidden = !names.length;
 }
 
-function closeMenu() {
-  var p = $(".menu__pop");
-  if (p && !p.hidden) {
-    p.hidden = true;
-    var b = $('[data-act="datamenu"]');
-    if (b) b.setAttribute("aria-expanded", "false");
-  }
-}
+/* תפריט "מאגר" הוסר יחד עם ייצוא ה-JSON. הפונקציה נשארת כדי שקוראים
+   קיימים לא יישברו, אבל אין לה עוד תפריט לסגור. */
+function closeMenu() {}
 
 function setTheme(t) {
   document.documentElement.setAttribute("data-theme", t);
@@ -3575,19 +3711,22 @@ function init() {
      שמחובר צריך לראות גם את ההגשות שעדיין ממתינות לו. */
   if (API.init) {
     API.init().then(function () {
-      renderAccount(); render();
+      renderAccount(); gate(); render();
+      /* רק כאן — קודם לכן API.ready עדיין false, gateNeeded מחזיר false,
+         והכתב-ויתור היה נפתח מתחת לשער במקום אחריו. */
+      maybeDisclaimer();
       return stLoad();
     }).then(function () {
       if (STORIES.length || VIEW === "stories") render();
     });
+  } else {
+    maybeDisclaimer();
   }
   renderAccount();
 
   heroCanvas();
   navShrink();
   reveal();
-
-  if (!disclaimerSeen()) setTimeout(disclaimerModal, 350);
 
   var m = /^#\/e\/(.+)$/.exec(location.hash);
   if (m) openEntry(decodeURIComponent(m[1]));
@@ -3725,7 +3864,7 @@ function init() {
     case "account": accountModal(); return;
     case "signout":
       API.logout()
-        .then(function () { renderAccount(); closeModal(); toast(t("יצאתם מהחשבון")); return stLoad(); })
+        .then(function () { renderAccount(); gate(); closeModal(); toast(t("יצאתם מהחשבון")); return stLoad(); })
         .then(render);
       return;
 
@@ -3814,14 +3953,8 @@ function init() {
           $("#prodView").scrollIntoView({ behavior: "smooth", block: "start" });
           return;
         case "open-from-scan": closeScan(); openEntry(act.dataset.id); return;
-        case "datamenu": {
-          var p = $(".menu__pop"), o = p.hidden;
-          p.hidden = !o;
-          act.setAttribute("aria-expanded", String(o));
-          return;
-        }
-        /* ייצוא/ייבוא JSON הוסרו: הם היו צינור להוצאת המאגר כולו.
-           השיתוף היחיד שנשאר הוא כרטיס תמונה בודד. */
+        /* ייצוא/ייבוא JSON ותפריט "מאגר" הוסרו: הם היו צינור להוצאת
+           המאגר כולו. השיתוף היחיד שנשאר הוא כרטיס תמונה בודד. */
 
         /* ── סיפורים אישיים ── */
         /* הגשת עדות דורשת חשבון — לא כדי לחסום אנשים אלא כדי שלכל
@@ -3863,7 +3996,15 @@ function init() {
         case "clearq":
           q.value = ""; S.q = ""; $(".seek__x").hidden = true; render(); q.focus();
           return;
-        case "update-health": updateHealthModal(); return;
+        case "devtools": devToolsModal(); return;
+        case "dev-clear-local": {
+          if (!isDev()) return;
+          lsSet(LS.approved, []); lsSet(LS.rejected, []);
+          loadDB(); fillCountries(); render(); closeModal();
+          toast(t("האישורים המקומיים אופסו"));
+          return;
+        }
+        case "update-health": if (!isDev()) return; updateHealthModal(); return;
         case "update-recheck": {
           var rb = tgt;
           rb.disabled = true; rb.textContent = t("בודק…");
@@ -3898,20 +4039,27 @@ function init() {
           }
           return;
         }
+        /* אישור ודחייה נשמרים כרגע ב-localStorage, כלומר הם משנים את
+           התצוגה במכשיר הזה בלבד ואינם מגיעים לאף מבקר אחר. זו הסיבה
+           שהם מוגבלים לצוות ומסומנים "מקומי": כפתור שנראה כמו החלטה
+           עורכית אבל אינו יוצא מהדפדפן הוא הבטחה שקרית.
+           כשהשרת יחזור, שתי הפעולות יעברו ל-/decide. */
         case "approve": {
+          if (!isDev()) return;
           var ap = lsGet(LS.approved, []);
           if (ap.indexOf(act.dataset.id) === -1) ap.push(act.dataset.id);
           lsSet(LS.approved, ap);
           loadDB(); fillCountries(); render(); openEntry(act.dataset.id);
-          toast("הרשומה אושרה");
+          toast(t("אושרה — במכשיר הזה בלבד"));
           return;
         }
         case "reject": {
+          if (!isDev()) return;
           var rj = lsGet(LS.rejected, []);
           if (rj.indexOf(act.dataset.id) === -1) rj.push(act.dataset.id);
           lsSet(LS.rejected, rj);
           loadDB(); fillCountries(); render(); closeDos();
-          toast("המועמד נדחה והוסר");
+          toast(t("הוסרה — במכשיר הזה בלבד"));
           return;
         }
       }
