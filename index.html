@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>אנטישימון — לדעת את מי אתם מממנים</title>
 <meta name="description" content="מרשם מתועד של חברות, מוסדות ואנשים שהכריזו על עמדה אנטי-ישראלית או שנקבע לגביהם ממצא רשמי בנושא אנטישמיות. חיפוש לפי קטגוריה, אזור וחומרה — כל רשומה עם מקורות.">
-<link rel="stylesheet" href="assets/fonts.css?v=20260830235955">
-<link rel="stylesheet" href="assets/styles.css?v=20260830235955">
+<link rel="stylesheet" href="assets/fonts.css?v=20260831003006">
+<link rel="stylesheet" href="assets/styles.css?v=20260831003006">
 
 <!-- התקנה למסך הבית -->
 <meta property="og:title" content="אנטישימון — לדעת את מי אתם מממנים">
@@ -27,10 +27,14 @@
 <noscript><p style="padding:2rem;text-align:center;font-family:sans-serif">האפליקציה דורשת JavaScript. — This app requires JavaScript.</p></noscript>
 <div class="grain" aria-hidden="true"></div>
 
-<!-- פס הדגל. שני פסי תכלת ולבן ביניהם — היחס והסדר של הדגל, בגובה
-     2px. זה הרמז הישראלי היחיד שמופיע בכל עמוד, והוא נשאר דק בכוונה:
-     מרשם ראיות צריך להיקרא כתיעוד, לא כהצהרה. -->
-<div class="flagrule" aria-hidden="true"></div>
+<!-- סרט הדגל. תכלת · לבן · תכלת ברוחב מלא, עם מגן דוד במרכז השדה
+     הלבן — המבנה של הדגל עצמו. הוא הדבר הראשון שנראה בכניסה. -->
+<div class="flagband" aria-hidden="true">
+  <svg class="flagband__star" viewBox="0 0 24 24" width="16" height="16">
+    <path d="M12 2.6 21.1 18.4 2.9 18.4Z"/>
+    <path d="M12 21.4 2.9 5.6 21.1 5.6Z"/>
+  </svg>
+</div>
 
 <a class="skip" href="#grid" data-i18n="דלג לרשומות">דלג לרשומות</a>
 
@@ -116,6 +120,12 @@
   <!-- רקע: מפת המרשם. נבנית ב-JS מאותם קווי חוף של לשונית המקומות,
        ונקודה בכל מדינה שיש בה רשומה. -->
   <div class="hero__bg" id="heroBg" aria-hidden="true"></div>
+  <!-- מגן דוד גדול כסימן מים. הוא גדול דיו כדי שקצותיו ייראו סביב
+       הכותרת והכרטיס, ולכן הוא נקרא גם כשמרכזו מכוסה. -->
+  <svg class="hero__star" viewBox="0 0 200 200" aria-hidden="true">
+    <path d="M100 8 179.7 146 20.3 146Z"/>
+    <path d="M100 192 20.3 54 179.7 54Z"/>
+  </svg>
   <div class="hero__in">
     <div class="hero__txt rv">
     <h1 class="hero__h"><span data-i18n="לדעת את מי">לדעת את מי</span><br><em data-i18n="אתם מממנים">אתם מממנים</em></h1>
@@ -197,6 +207,8 @@
 
   </div>
 </section>
+
+<hr class="flagsep" aria-hidden="true">
 
 <!-- ══════ תוצאות ══════ -->
 <section class="results" aria-live="polite">
@@ -344,19 +356,19 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-<script src="assets/config.js?v=20260830235955"></script>
-<script src="assets/i18n.js?v=20260830235955"></script>
-<script src="assets/data-world.js?v=20260830235955"></script>
-<script src="assets/i18n-data.js?v=20260830235955"></script>
-<script src="assets/data-cc.js?v=20260830235955"></script>
-<script src="assets/data-geo.js?v=20260830235955"></script>
-<script src="assets/data-places.js?v=20260830235955"></script>
-<script src="assets/data.js?v=20260830235955"></script>
-<script src="assets/data-support.js?v=20260830235955"></script>
-<script src="assets/data-signers.js?v=20260830235955"></script>
+<script src="assets/config.js?v=20260831003006"></script>
+<script src="assets/i18n.js?v=20260831003006"></script>
+<script src="assets/data-world.js?v=20260831003006"></script>
+<script src="assets/i18n-data.js?v=20260831003006"></script>
+<script src="assets/data-cc.js?v=20260831003006"></script>
+<script src="assets/data-geo.js?v=20260831003006"></script>
+<script src="assets/data-places.js?v=20260831003006"></script>
+<script src="assets/data.js?v=20260831003006"></script>
+<script src="assets/data-support.js?v=20260831003006"></script>
+<script src="assets/data-signers.js?v=20260831003006"></script>
 <!-- שכבת מועמדים מהסוכן היומי. הקובץ עשוי לא להתקיים — זה תקין. -->
-<script src="assets/data-incoming.js?v=20260830235955"></script>
-<script src="assets/api.js?v=20260830235955"></script>
-<script src="assets/app.js?v=20260830235955"></script>
+<script src="assets/data-incoming.js?v=20260831003006"></script>
+<script src="assets/api.js?v=20260831003006"></script>
+<script src="assets/app.js?v=20260831003006"></script>
 </body>
 </html>

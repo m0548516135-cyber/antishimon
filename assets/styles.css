@@ -1149,33 +1149,42 @@ body.is-gated { overflow: hidden; }
    כתיעוד; סמליות בולטת הופכת אותו למניפסט ומחלישה בדיוק את מה שהוא
    מנסה להוכיח. */
 
-/* פס הדגל — תכלת · לבן · תכלת, בראש כל עמוד */
-/* גובה 4px ולא 2: בשלושה פסים על 2px הלבן יוצא תת-פיקסל, הדפדפן
-   ממזג אותו והתוצאה היא קו כחול אחיד — כלומר הרמז לדגל נעלם. ב-4px
-   כל פס מקבל פיקסל שלם והמבנה נקרא. */
-.flagrule {
+/* סרט הדגל — תכלת · לבן · תכלת, ברוחב מלא בראש כל עמוד.
+   28px ולא 4: פס דק נקרא כקו הפרדה, לא כדגל. בגובה הזה המבנה
+   מזוהה מיד, ומגן דוד במרכז השדה הלבן משלים את הציטוט. */
+.flagband {
   position: sticky; inset-block-start: 0; z-index: 60;
-  block-size: 4px;
+  block-size: 28px;
+  display: grid; place-items: center;
   background: linear-gradient(
     to bottom,
-    var(--tchelet)    0    1.5px,
-    var(--flag-white) 1.5px 2.5px,
-    var(--tchelet)    2.5px 4px
+    var(--tchelet)    0    6px,
+    var(--flag-white) 6px  22px,
+    var(--tchelet)    22px 28px
   );
+}
+.flagband__star path {
+  fill: none; stroke: var(--tchelet); stroke-width: 1.6; stroke-linejoin: round;
 }
 :root { --flag-white: #F1EBDD; }
 [data-theme="light"] { --flag-white: #FFFDF8; }
 
+@media (max-width: 560px) {
+  .flagband { block-size: 22px; }
+  .flagband__star { inline-size: 13px; block-size: 13px; }
+}
+
 /* מגן דוד בלוגו — קו דק, מתחת לעמודות */
 .logo__star path {
-  fill: none;
+  fill: var(--tchelet-2);
+  fill-opacity: .16;
   stroke: var(--tchelet-2);
-  stroke-width: 1.15;
+  stroke-width: 1.5;
   stroke-linejoin: round;
-  opacity: .5;
-  transition: opacity .25s ease;
+  opacity: .95;
+  transition: fill-opacity .25s ease;
 }
-.brand:hover .logo__star path { opacity: .85; }
+.brand:hover .logo__star path { fill-opacity: .3; }
 
 /* ישראל על מפת המקומות — צורה אחרת מכל נקודה אחרת, כי היא אינה
    נקודת מדידה אלא נקודת הייחוס. */
@@ -1208,4 +1217,72 @@ body.is-gated { overflow: hidden; }
 :where(a, button, input, select, textarea):focus-visible {
   outline: 2px solid var(--tchelet-2);
   outline-offset: 2px;
+}
+
+/* ══════ סימן מים בפתיח ══════
+   מגן דוד גדול מאחורי תוכן הפתיח. גודלו נגזר מרוחב המסך כדי שקצותיו
+   ייצאו מעבר לכותרת ולכרטיס — כך הוא נקרא גם כשמרכזו מכוסה, וזו
+   בדיוק הבעיה שהפילה את הניסיון הקודם לסמן את ישראל שם. */
+
+.hero { position: relative; }
+.hero__star {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 6%;
+  transform: translateY(-50%);
+  /* הגובה נגזר מהפתיח עצמו ולא מרוחב המסך. ב-620px קבוע הכוכב היה
+     גבוה מהפתיח (549px), שני קודקודיו נחתכו, והתוצאה נקראה כקווים
+     אלכסוניים אקראיים במקום כמגן דוד. */
+  block-size: min(88%, 30rem);
+  inline-size: auto;
+  aspect-ratio: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero__star path {
+  fill: none;
+  stroke: var(--tchelet-2);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  opacity: .72;
+}
+[data-theme="light"] .hero__star path { opacity: .5; }
+
+/* התוכן חייב לשבת מעליו, אחרת סימן המים מכסה את הכותרת */
+.hero__in { position: relative; z-index: 1; }
+
+/* מרכוז בשולי auto ולא ב-translate. `inset-inline-start` הוא לוגי
+   ומתהפך ב-RTL, בעוד translateX(-50%) פיזי ותמיד מזיז שמאלה — השילוב
+   דחף את הכוכב אל מחוץ למסך. שוליים אוטומטיים עובדים בשני הכיוונים. */
+@media (max-width: 900px) {
+  .hero__star {
+    inset-inline: 0;
+    margin-inline: auto;
+    transform: translateY(-50%);
+    block-size: min(80%, 26rem);
+  }
+}
+
+/* ══════ כפתור ראשי בתכלת ══════
+   הכפתור הראשי היה בצבע הטקסט — קרם על כהה. תכלת הופכת אותו לצבע
+   המותג, וזה השינוי הבודד שהכי משנה את האופי של האתר. */
+
+.btn {
+  background: var(--tchelet-2);
+  color: #0B1220;
+  font-weight: 600;
+}
+[data-theme="light"] .btn { background: var(--tchelet); color: #FFFDF8; }
+.btn:hover { opacity: 1; filter: brightness(1.08); }
+.btn--ghost { background: transparent; color: var(--txt); }
+[data-theme="light"] .btn--ghost { background: transparent; color: var(--txt); }
+
+/* ══════ מפריד דגל בין חלקים ══════ */
+.flagsep {
+  block-size: 3px; border: 0; margin: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--tchelet) 0 1px, var(--flag-white) 1px 2px, var(--tchelet) 2px 3px
+  );
+  opacity: .55;
 }
