@@ -23,6 +23,12 @@
   --brass:   #D8A93B;
   --ok:      #55B98A;
 
+  /* תכלת. #0038B8 הוא הכחול של הדגל, והוא נשאר מדויק במקום היחיד שבו
+     הוא מופיע מול לבן — פס הדגל. על רקע כהה הוא כמעט בלתי נראה, ולכן
+     לשימוש בממשק יש גרסה מוארת שעומדת בניגודיות AA. */
+  --tchelet:   #0038B8;
+  --tchelet-2: #6E9EEA;
+
   --s1: #7E8AA8;
   --s2: #4E93B8;
   --s3: #E0913C;
@@ -54,6 +60,11 @@
 
   --brass:   #9A6F12;
   --ok:      #227A54;
+
+  /* בערכה הבהירה התכלת המקורי כבר קריא, ולכן אין צורך בגרסה מוארת —
+     ההפך: היא צריכה להיות מעט כהה יותר כדי לעמוד מול רקע בהיר. */
+  --tchelet:   #0038B8;
+  --tchelet-2: #0B47A8;
 
   --s1: #5E6B85;
   --s2: #266F94;
@@ -1132,3 +1143,69 @@ body.is-gated { overflow: hidden; }
   border-block-end: 1px dotted var(--txt-3);
 }
 .gate__terms:hover { color: var(--brass); border-block-end-color: var(--brass); }
+
+/* ══════ סימני זהות ══════
+   מאופקים בכוונה. מרשם שנוקב בשמות אמיתיים נשען על האמון שהוא נקרא
+   כתיעוד; סמליות בולטת הופכת אותו למניפסט ומחלישה בדיוק את מה שהוא
+   מנסה להוכיח. */
+
+/* פס הדגל — תכלת · לבן · תכלת, בראש כל עמוד */
+/* גובה 4px ולא 2: בשלושה פסים על 2px הלבן יוצא תת-פיקסל, הדפדפן
+   ממזג אותו והתוצאה היא קו כחול אחיד — כלומר הרמז לדגל נעלם. ב-4px
+   כל פס מקבל פיקסל שלם והמבנה נקרא. */
+.flagrule {
+  position: sticky; inset-block-start: 0; z-index: 60;
+  block-size: 4px;
+  background: linear-gradient(
+    to bottom,
+    var(--tchelet)    0    1.5px,
+    var(--flag-white) 1.5px 2.5px,
+    var(--tchelet)    2.5px 4px
+  );
+}
+:root { --flag-white: #F1EBDD; }
+[data-theme="light"] { --flag-white: #FFFDF8; }
+
+/* מגן דוד בלוגו — קו דק, מתחת לעמודות */
+.logo__star path {
+  fill: none;
+  stroke: var(--tchelet-2);
+  stroke-width: 1.15;
+  stroke-linejoin: round;
+  opacity: .5;
+  transition: opacity .25s ease;
+}
+.brand:hover .logo__star path { opacity: .85; }
+
+/* ישראל על מפת המקומות — צורה אחרת מכל נקודה אחרת, כי היא אינה
+   נקודת מדידה אלא נקודת הייחוס. */
+.mp-il__star path {
+  fill: none; stroke: var(--tchelet-2); stroke-width: 1.5; stroke-linejoin: round;
+}
+/* טבעת ולא עיגול מלא: עיגול בקוטר כפול מהכוכב הפך אותו לכתם כחול
+   שהכוכב נבלע בתוכו, והכוכב הוא הסימן — לא ההילה. */
+.mp-il__halo {
+  fill: none; stroke: var(--tchelet-2); stroke-width: 1.2;
+  transform-origin: center; transform-box: fill-box;
+  animation: ilRing 4s ease-out infinite;
+}
+.map__key i[data-k="il"] {
+  border-radius: 0; background: none;
+  border: 1.5px solid var(--tchelet-2);
+  transform: rotate(45deg);
+}
+@media (prefers-reduced-motion: reduce) { .mp-il__halo { animation: none; } }
+
+/* התרחבות הטבעת סביב סימון ישראל */
+@keyframes ilRing {
+  0%   { transform: scale(.4); opacity: .75; }
+  70%  { transform: scale(2.6); opacity: 0; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+/* תכלת כדגש שני: קישורים בתוך תוכן, ומסגרת המיקוד בכל האתר */
+.item__src a, .modal__p a, .dos a:not(.btn):not(.tl) { color: var(--tchelet-2); }
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--tchelet-2);
+  outline-offset: 2px;
+}

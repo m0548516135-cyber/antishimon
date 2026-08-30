@@ -1409,6 +1409,38 @@ function landPaths() {
   return MAP_LAND;
 }
 
+/* ── ישראל על המפה ────────────────────────────────────────────────────────
+   כל נקודה אחרת במפה היא מקום שנמדד בו משהו. ישראל אינה כזו — אין לה
+   רשומות במרשם, והמרשם כולו עוסק ביחס אליה. בלי הסימון הזה המדינה
+   שהכול נמדד ביחס אליה פשוט נעדרת מהמפה שלה עצמה.
+
+   לכן צורה אחרת: מגן דוד קווי בתכלת, ולא עיגול. ההבדל בצורה אומר
+   שזו אינה עוד נקודת מדידה, והמקרא מסביר זאת במילים.
+   ------------------------------------------------------------------------ */
+
+function israelMark() {
+  var il = GEO["ישראל"];
+  if (!il) return "";
+  var cx = mapX(il[1]), cy = mapY(il[0]);
+
+  /* מגן דוד: שני משולשים שווי צלעות חופפים, סביב (cx,cy) ברדיוס r. */
+  var r = 7;
+  function tri(flip) {
+    var pts = [0, 1, 2].map(function (i) {
+      var a = (flip ? -90 : 90) + i * 120;
+      var rad = a * Math.PI / 180;
+      return (cx + r * Math.cos(rad)).toFixed(1) + " " + (cy + r * Math.sin(rad)).toFixed(1);
+    });
+    return '<path d="M' + pts.join("L") + 'Z"/>';
+  }
+
+  return '<g class="mp-il" aria-hidden="true">' +
+    '<circle class="mp-il__halo" cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + (r + 6) + '"/>' +
+    '<g class="mp-il__star">' + tri(false) + tri(true) + "</g>" +
+    "<title>" + esc(t("ישראל — נקודת הייחוס של המרשם")) + "</title>" +
+  "</g>";
+}
+
 function renderMap() {
   var host = $("#mapPlot");
   if (!host) return;
@@ -1476,6 +1508,7 @@ function renderMap() {
       '<g class="map__grid">' + grid + "</g>" +
       '<line class="map__eq" x1="0" y1="' + mapY(0).toFixed(1) + '" x2="' + W + '" y2="' + mapY(0).toFixed(1) + '"/>' +
       '<g class="map__land">' + landPaths() + "</g>" +
+      israelMark() +
       dots +
     "</svg>";
 
@@ -1485,6 +1518,7 @@ function renderMap() {
     '<div class="map__key">' +
       "<span><i></i>" + t("גודל הנקודה — היקף האירועים לנפש") + "</span>" +
       '<span><i data-k="off"></i>' + t("טבעת — החלטה של עירייה או ממשלה") + "</span>" +
+      '<span><i data-k="il"></i>' + t("ישראל — נקודת הייחוס") + "</span>" +
     "</div>");
 
   var measured = pts.filter(function (p) { return p.measured; });
@@ -3211,6 +3245,10 @@ function heroCanvas() {
       ";animation-delay:" + (i * 0.09).toFixed(2) + 's"/>';
   }).join("");
 
+  /* אין כאן סימון לישראל, אף שזה היה הרעיון הראשון. רקע הפתיח מכוסה
+     כמעט כולו — הכותרת מימין וכרטיס "מה חדש" משמאל — וכל מיקום שנבדק
+     נפל מתחת לאחד מהם. סימון שאינו נראה אינו אלמנט עיצוב, ולכן הוא
+     עבר למפת המקומות, שם הוא באמת נראה. */
   host.innerHTML =
     '<svg viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' +
       '<g class="hb__land">' + land + "</g>" +

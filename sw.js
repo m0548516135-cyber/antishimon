@@ -12,7 +12,7 @@
    כשעולה גרסה חדשה של השלד, ה-SW מנקה מטמונים ישנים ומודיע לדף.
    ========================================================================= */
 
-const VERSION = "v14";
+const VERSION = "v15";
 const SHELL = "antishimon-shell-" + VERSION;
 const DATA  = "antishimon-data-" + VERSION;
 

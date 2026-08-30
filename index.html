@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>אנטישימון — לדעת את מי אתם מממנים</title>
 <meta name="description" content="מרשם מתועד של חברות, מוסדות ואנשים שהכריזו על עמדה אנטי-ישראלית או שנקבע לגביהם ממצא רשמי בנושא אנטישמיות. חיפוש לפי קטגוריה, אזור וחומרה — כל רשומה עם מקורות.">
-<link rel="stylesheet" href="assets/fonts.css?v=20260830053800">
-<link rel="stylesheet" href="assets/styles.css?v=20260830053800">
+<link rel="stylesheet" href="assets/fonts.css?v=20260830235955">
+<link rel="stylesheet" href="assets/styles.css?v=20260830235955">
 
 <!-- התקנה למסך הבית -->
 <meta property="og:title" content="אנטישימון — לדעת את מי אתם מממנים">
@@ -26,6 +26,11 @@
 <body>
 <noscript><p style="padding:2rem;text-align:center;font-family:sans-serif">האפליקציה דורשת JavaScript. — This app requires JavaScript.</p></noscript>
 <div class="grain" aria-hidden="true"></div>
+
+<!-- פס הדגל. שני פסי תכלת ולבן ביניהם — היחס והסדר של הדגל, בגובה
+     2px. זה הרמז הישראלי היחיד שמופיע בכל עמוד, והוא נשאר דק בכוונה:
+     מרשם ראיות צריך להיקרא כתיעוד, לא כהצהרה. -->
+<div class="flagrule" aria-hidden="true"></div>
 
 <a class="skip" href="#grid" data-i18n="דלג לרשומות">דלג לרשומות</a>
 
@@ -61,6 +66,13 @@
       <span class="logo" aria-hidden="true">
         <svg viewBox="0 0 40 40" width="34" height="34">
           <rect x="1.2" y="1.2" width="37.6" height="37.6" rx="9" class="logo__plate"/>
+          <!-- מגן דוד קווי מאחורי העמודות: שני משולשים שווי צלעות
+               חופפים. הוא נקרא כרקע ולא מתחרה בעמודות הדרגה, שהן
+               עדיין הסימן העיקרי. -->
+          <g class="logo__star">
+            <path d="M20 6.4 32.2 27.6 7.8 27.6Z"/>
+            <path d="M20 33.6 7.8 12.4 32.2 12.4Z"/>
+          </g>
           <rect x="8"  y="24" width="4.6" height="8"  rx="1.6" fill="var(--s1)"/>
           <rect x="14.7" y="19" width="4.6" height="13" rx="1.6" fill="var(--s2)"/>
           <rect x="21.4" y="14" width="4.6" height="18" rx="1.6" fill="var(--s3)"/>
@@ -332,19 +344,19 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-<script src="assets/config.js?v=20260830053800"></script>
-<script src="assets/i18n.js?v=20260830053800"></script>
-<script src="assets/data-world.js?v=20260830053800"></script>
-<script src="assets/i18n-data.js?v=20260830053800"></script>
-<script src="assets/data-cc.js?v=20260830053800"></script>
-<script src="assets/data-geo.js?v=20260830053800"></script>
-<script src="assets/data-places.js?v=20260830053800"></script>
-<script src="assets/data.js?v=20260830053800"></script>
-<script src="assets/data-support.js?v=20260830053800"></script>
-<script src="assets/data-signers.js?v=20260830053800"></script>
+<script src="assets/config.js?v=20260830235955"></script>
+<script src="assets/i18n.js?v=20260830235955"></script>
+<script src="assets/data-world.js?v=20260830235955"></script>
+<script src="assets/i18n-data.js?v=20260830235955"></script>
+<script src="assets/data-cc.js?v=20260830235955"></script>
+<script src="assets/data-geo.js?v=20260830235955"></script>
+<script src="assets/data-places.js?v=20260830235955"></script>
+<script src="assets/data.js?v=20260830235955"></script>
+<script src="assets/data-support.js?v=20260830235955"></script>
+<script src="assets/data-signers.js?v=20260830235955"></script>
 <!-- שכבת מועמדים מהסוכן היומי. הקובץ עשוי לא להתקיים — זה תקין. -->
-<script src="assets/data-incoming.js?v=20260830053800"></script>
-<script src="assets/api.js?v=20260830053800"></script>
-<script src="assets/app.js?v=20260830053800"></script>
+<script src="assets/data-incoming.js?v=20260830235955"></script>
+<script src="assets/api.js?v=20260830235955"></script>
+<script src="assets/app.js?v=20260830235955"></script>
 </body>
 </html>

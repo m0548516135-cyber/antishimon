@@ -9,8 +9,160 @@
    ========================================================================= */
 
 window.ANTISHIMON_INCOMING = {
-  generated: "2026-08-28",
+  generated: "2026-08-30",
   entries: [
+    {
+      "id": "inc-20260830-01",
+      "name": "סיידה חאתון",
+      "aliases": [
+        "Syeda Khatun"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": "לונדון"
+      },
+      "scope": "local",
+      "severity": 4,
+      "status": "review",
+      "summary": "שירות התביעה של בריטניה (CPS) הודיע כי ב-27 באוגוסט 2026 נגזרו על סיידה חאתון (39) 12 חודשי מאסר על תנאי לשנתיים, בבית משפט השלום בסטרטפורד, על תקיפה אנטישמית. ב-10 במאי 2026, מחוץ לבית ספר תיכון יהודי בשכונת סטמפורד היל בצפון לונדון, צעקה חאתון קללות אנטישמיות לעבר אם שדחפה עגלת תינוק, ולאחר מכן פנתה אל תלמידים שהמתינו בשער בית הספר ונופפה לעברם בזרועותיה באגרסיביות; כשאב של אחד הילדים שאל מדוע היא מתנכלת לילדים, הכתה אותו בפניו, משכה בזקנו והמשיכה בקללות. היא הורשעה ב-3 ביולי 2026 בשלושה סעיפי תקיפה על רקע גזעני, סעיף אחד של תקיפה על רקע גזעני שגרמה חבלה ממשית, וסעיף אחד של התנהגות על רקע גזעני שגרמה הטרדה ומצוקה. גזר הדין הוחמר משמונה חודשים בשל מרכיב שנאת היהודים שבעבירה, והוטל צו הרחקה.",
+      "summaryEn": "The UK Crown Prosecution Service (CPS) announced that on 27 August 2026 Syeda Khatun, 39, was sentenced at Stratford Magistrates' Court to 12 months' imprisonment suspended for two years for an antisemitic attack. On 10 May 2026, outside a Jewish secondary school in Stamford Hill, north London, Khatun shouted antisemitic abuse at a mother pushing a baby, then turned toward pupils waiting at the school gate and swung her arms aggressively at them; when the father of one of the children asked why she was targeting youngsters, she struck him in the face, pulled his beard and continued the abuse. She was convicted on 3 July 2026 of three counts of racially aggravated assault, one count of racially aggravated assault occasioning actual bodily harm, and one count of racially aggravated words and behaviour causing harassment, alarm or distress. The sentence was uplifted from eight months because of the anti-Jewish hate element of the offence, and a restraining order was imposed.",
+      "tags": [
+        "ממצא רשמי",
+        "אנטישמיות",
+        "אלימות",
+        "גזר דין"
+      ],
+      "sources": [
+        {
+          "date": "2026-08-27",
+          "publisher": "The Crown Prosecution Service",
+          "title": "UPDATED WITH SENTENCE: Woman convicted of antisemitic attack outside Jewish secondary school in north London",
+          "url": "https://www.cps.gov.uk/london-north/news/updated-sentence-woman-convicted-antisemitic-attack-outside-jewish-secondary",
+          "quote": "Violence motivated by antisemitic hatred is abhorrent and nobody should have to fear going about their daily life because of their race, religion or identity."
+        },
+        {
+          "date": "2026-07",
+          "publisher": "Jewish News",
+          "title": "Woman convicted after antisemitic attack on children outside Jewish school",
+          "url": "https://www.jewishnews.co.uk/woman-convicted-after-antisemitic-attack-on-children-outside-jewish-school/"
+        },
+        {
+          "date": "2026-07",
+          "publisher": "The Jewish Chronicle",
+          "title": "Woman convicted for abusing children outside Jewish school",
+          "url": "https://www.thejc.com/news/uk/woman-convicted-for-abusing-children-outside-jewish-school-hbkdkpc2"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-08-27",
+      "added": "2026-08-30"
+    },
+    {
+      "id": "inc-20260830-02",
+      "name": "דן בילזריאן",
+      "aliases": [
+        "Dan Bilzerian"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 4,
+      "status": "review",
+      "summary": "לקראת הפריימריז הרפובליקני במחוז הבחירה השישי של פלורידה (18 באוגוסט 2026) התמודד המשפיען דן בילזריאן מול חבר הקונגרס היהודי רנדי פיין, וניהל קמפיין אנטישמי מוצהר. הוא פרסם סרטון שנוצר בבינה מלאכותית שכינה את פיין שוב ושוב 'יהודי שמן', 'עליון יהודי' ו'שיילוק', הציג קרניים צומחות מראשו ושילב דמות של אדולף היטלר; בסרטון קמפיין מוזיקלי נרמז לחיוב להיטלר ('שמא נשוב ונבחן את דעותיו של אותו צייר אוסטרי?'). בילזריאן אמר כי 'מחוז 6 מבין את הבעיה היהודית', הצהיר שברצונו 'להרוג ישראלים', והפיץ תיאוריות קונספירציה אנטישמיות. מחקר מצא כי כשליש מפרסומיו כוללים רטוריקה אנטישמית. פיין ניצח אותו בפער גדול (כ-57% מול כ-18%) ב-18 באוגוסט 2026, והמסרים גונו בגינוי דו-מפלגתי.",
+      "summaryEn": "Ahead of the Republican primary in Florida's 6th congressional district (18 August 2026), influencer Dan Bilzerian ran against Jewish Congressman Randy Fine and made his campaign overtly antisemitic. He released an AI-generated video that repeatedly called Fine a 'fat Jew,' 'Jewish supremacist' and 'Shylock,' depicted horns growing from Fine's head and featured Adolf Hitler; a campaign music video positively referenced Hitler ('Should we revisit that Austrian painter's opinions?'). Bilzerian said 'District 6 understands the Jewish problem,' stated he wanted to 'kill Israelis,' and pushed antisemitic conspiracy theories. A study found that roughly one third of his posts contained antisemitic rhetoric. Fine defeated him decisively (about 57% to about 18%) on 18 August 2026, and the messaging drew bipartisan condemnation.",
+      "tags": [
+        "אנטישמיות",
+        "רשתות חברתיות",
+        "פוליטיקה",
+        "הסתה"
+      ],
+      "sources": [
+        {
+          "date": "2026-08-18",
+          "publisher": "JTA",
+          "title": "Randy Fine defeats Dan Bilzerian, who said he wants to 'kill Israelis'",
+          "url": "https://www.jta.org/2026/08/18/politics/randy-fine-defeats-dan-bilzerian-in-florida-primary",
+          "quote": "District 6 understands the Jewish problem"
+        },
+        {
+          "date": "2026-08",
+          "publisher": "Jewish Insider",
+          "title": "Randy Fine's primary opponent pushes openly antisemitic, pro-Hitler messaging",
+          "url": "https://jewishinsider.com/2026/08/randy-fine-dan-bilzerian-pro-hitler-antisemitic-messaging-ai-video/",
+          "quote": "repeatedly calling Fine a 'fat Jew,' 'Jewish supremacist,' and 'Shylock'"
+        },
+        {
+          "date": "2026-08",
+          "publisher": "The Jerusalem Post",
+          "title": "'It's us against the Jew': One third of Dan Bilzerian's posts contain antisemitic rhetoric - study",
+          "url": "https://www.jpost.com/diaspora/antisemitism/article-905332"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-08-18",
+      "added": "2026-08-30"
+    },
+    {
+      "id": "inc-20260830-03",
+      "name": "עבאס חמזה",
+      "aliases": [
+        "Abbas Hamze",
+        "Hamze Abbas"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "קנדה",
+        "region": "na",
+        "city": "טורונטו"
+      },
+      "scope": "local",
+      "severity": 4,
+      "status": "review",
+      "summary": "בעצרת אנטי-ישראלית ב-23 באוגוסט 2026 בצומת הרחובות באת'רסט ושפרד בטורונטו, אזור בעל אוכלוסייה יהודית גדולה, הכריז עבאס חמזה — מרצה באוניברסיטת ניאגרה פולס ומרצה במכללות ג'ורג'יאן וקונסטוגה — כי 'ציונים' 'אנסו והרגו ואכלו ילדים'. עוד אמר כי היהודים/הציונים 'מעולם לא הייתה להם מדינה משלהם בגלל המעשים המושחתים שלהם; הם העם המגורש ביותר בעולם בשל עיסוק בכשפים ובדברים נוראיים'. הדברים, שתועדו בווידאו והופצו ברשת, מחזירים לעלילת הדם מימי הביניים. יחידת פשעי השנאה של משטרת טורונטו פתחה בחקירה, ואוניברסיטת ניאגרה פולס פתחה בבדיקה פנימית.",
+      "summaryEn": "At an anti-Israel rally on 23 August 2026 at the intersection of Bathurst Street and Sheppard Avenue in Toronto, an area with a large Jewish population, Abbas Hamze — an instructor at the University of Niagara Falls and a lecturer at Georgian College and Conestoga College — declared that 'Zionists' had 'raped and killed and eaten children.' He also said that Jews/Zionists had 'never had a country of their own because of their mischief; they are the most kicked-out people in the world for making black magic and horrible things.' The remarks, captured on video and circulated online, invoke the medieval blood libel. The Toronto Police hate-crimes unit opened an investigation, and the University of Niagara Falls opened an internal investigation.",
+      "tags": [
+        "אנטישמיות",
+        "עלילת דם",
+        "אקדמיה",
+        "הסתה"
+      ],
+      "sources": [
+        {
+          "date": "2026-08-24",
+          "publisher": "The Jerusalem Post",
+          "title": "Toronto protest speaker invokes antisemitic tropes about Zionists",
+          "url": "https://www.jpost.com/diaspora/antisemitism/article-906456",
+          "quote": "They have raped and killed and eaten children at the same time."
+        },
+        {
+          "date": "2026-08-24",
+          "publisher": "Combat Antisemitism Movement",
+          "title": "University Instructor Tells Toronto Anti-Israel Rally That Zionists 'Rape, Kill, and Eat Children'",
+          "url": "https://combatantisemitism.org/cam-news/university-instructor-tells-toronto-anti-israel-rally-zionists-rape-kill-and-eat-children/"
+        },
+        {
+          "date": "2026-08-26",
+          "publisher": "The Jewish (thej.ca)",
+          "title": "Toronto Police Probe University Lecturer's Remarks At Pro-Palestinian Rally As UNF Opens Internal Investigation",
+          "url": "https://thej.ca/2026/08/26/toronto-police-probe-university-lecturers-remarks-at-pro-palestinian-rally-as-unf-opens-internal-investigation/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-08-24",
+      "added": "2026-08-30"
+    },
     {
       "id": "inc-20260827-01",
       "name": "חואקין פיניקס",

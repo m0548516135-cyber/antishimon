@@ -264,6 +264,8 @@ window.ANTISHIMON_I18N = {
       "הרשמה": "Sign up",
       "הגשת עדות": "Submit testimony",
       "נוספו לאחרונה": "Recently added",
+      "ישראל — נקודת הייחוס": "Israel — the reference point",
+      "ישראל — נקודת הייחוס של המרשם": "Israel — the registry's reference point",
       "כניסה למרשם": "Registry access",
       "המרשם פתוח לבעלי חשבון": "The registry is open to account holders",
       "כאן נקובים שמות של חברות, מוסדות ואנשים אמיתיים. חשבון נדרש כדי שלכל צפייה והגשה יהיה בעלים — ולא כדי לאסוף עליכם מידע: מספיקים שם תצוגה, מייל וסיסמה.": "This registry names real companies, institutions and people. An account is required so that every view and submission has an owner — not to collect data about you: a display name, an email and a password are all it takes.",
