@@ -1289,81 +1289,158 @@ body.is-gated { overflow: hidden; }
 
 /* ══════ התקן ══════
    בין הפתיח לסינון: התקן המלא, כולל מה לא נכנס באותה בולטות של מה
-   שכן. עמודת שוליים דביקה (לא קבועה — הסקשן הזה קצר יחסית לעמוד כולו,
-   ורכיב fixed היה נשאר תלוי מעל הסינון והתוצאות אחריו) צוברת "חותמת"
-   בכל כלל שעובר, כך שבסוף הקטע יש רשימת תקן ויזואלית שלמה. */
+   שכן. זה לא עוד קופסת תוכן — טיפוגרפיה גדולה כמו בפתיח, מגן דוד
+   כסימן מים, ופרק שיא (השורה השחורה) שמתנהג שונה מכל שאר הסקשן,
+   בדיוק כמו שדף גלילה קולנוגרפי בנוי: לא הכול באותו עוצמה. */
 
-.standard { padding-block: clamp(2.6rem, 6vw, 4.6rem); border-block-end: 1px solid var(--line-2); }
+.standard { position: relative; overflow: clip; padding-block: clamp(3.5rem, 8vw, 6.5rem) 0; }
+
+/* מגן דוד גדול כרקע — אותו מוטיב מהפתיח, כדי שהקטע ירגיש כהמשך של
+   אותה שפה חזותית ולא כתוסף מודבק. */
+.standard__star {
+  position: absolute; inset-inline-end: -4rem; top: 50%; transform: translateY(-50%);
+  inline-size: min(46vw, 34rem); block-size: min(46vw, 34rem); pointer-events: none; z-index: 0;
+}
+.standard__star path { fill: none; stroke: var(--tchelet-2); stroke-width: 1.1; opacity: .16; }
+[data-theme="light"] .standard__star path { opacity: .12; }
+
 .standard__in {
+  position: relative; z-index: 1;
   max-width: var(--max); margin-inline: auto; padding-inline: var(--pad);
-  display: grid; grid-template-columns: 1fr minmax(0, 44rem); gap: clamp(1.5rem, 4vw, 3.5rem);
+  display: grid; grid-template-columns: 1fr minmax(0, 46rem); gap: clamp(1.5rem, 4vw, 3.5rem);
 }
 .standard__col { min-width: 0; }
-.standard__h { font-family: var(--fd); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 1.3rem; }
+
+/* כותרת בקנה מידה של פתיח, לא של תת-כותרת פנימית */
+.standard__h {
+  font-family: var(--fd); font-weight: 400; letter-spacing: -.02em;
+  font-size: clamp(2.4rem, 5.6vw, 4.2rem); line-height: 1.04; margin: 0 0 2rem;
+}
 
 .stdrail { order: -1; }
 @media (min-width: 980px) {
-  .stdrail { position: sticky; top: 5.5rem; align-self: start; }
+  .stdrail { position: sticky; top: 6rem; align-self: start; }
 }
-.stdrail__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.stdrail__cap {
+  font: 600 .68rem var(--fm); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--txt-3); margin-block-end: 1rem; padding-block-end: .6rem;
+  border-block-end: 1px solid var(--line-2);
+}
+.stdrail__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .9rem; }
 .stdrail__trig { display: block; width: 1px; height: 1px; }
 .stdrail__stamp {
-  display: flex; align-items: flex-start; gap: .5rem;
-  opacity: 0; transform: translateY(6px) rotate(-2deg) scale(.94);
-  transition: opacity .4s var(--e), transform .4s var(--e);
+  display: flex; align-items: flex-start; gap: .6rem;
+  opacity: 0; transform: translateY(10px) rotate(-3deg) scale(.88);
+  transition: opacity .5s var(--e), transform .5s var(--e);
 }
-.stdrail__stamp.is-in { opacity: 1; transform: translateY(0) rotate(-1.5deg) scale(1); }
+.stdrail__stamp.is-in { opacity: 1; transform: translateY(0) rotate(-2deg) scale(1); }
 .stdrail__mark {
-  flex: none; width: 1.25rem; height: 1.25rem; border-radius: 4px;
-  display: grid; place-items: center; font: 700 .68rem var(--fm); border: 1.5px solid currentColor;
+  flex: none; width: 1.5rem; height: 1.5rem; border-radius: 5px;
+  display: grid; place-items: center; font: 800 .8rem var(--fm); border: 2px solid currentColor;
+  box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 12%, transparent);
 }
 .stdrail__stamp[data-k="in"] .stdrail__mark { color: var(--ok); }
 .stdrail__stamp[data-k="out"] .stdrail__mark { color: var(--s4); }
-.stdrail__txt { font: 500 .72rem/1.35 var(--ff); color: var(--txt-2); }
+.stdrail__txt { font: 600 .8rem/1.35 var(--ff); color: var(--txt); }
 @media (prefers-reduced-motion: reduce) {
   .stdrail__stamp { transition: opacity .2s linear; transform: none; }
   .stdrail__stamp.is-in { transform: none; }
 }
 
 .method-card {
-  border: 1px solid var(--line-2); border-radius: 14px; background: var(--card);
-  padding: 1.8rem 1.7rem; margin-block-end: 1.8rem; position: relative;
+  border-inline-start: 4px solid var(--tchelet-2); border-radius: 4px;
+  background: var(--card); padding: 2.2rem 2.1rem; margin-block-end: 2.6rem; position: relative;
+  box-shadow: var(--card-sh, 0 10px 30px -14px rgba(0,0,0,.4));
 }
-.method-card__rule { font-size: 1.08rem; line-height: 1.55; margin: 0 0 1rem; color: var(--txt); }
+.method-card__rule { font-family: var(--fd); font-weight: 400; font-size: clamp(1.3rem, 2vw, 1.65rem); line-height: 1.4; margin: 0 0 1.2rem; color: var(--txt); }
 .method-card__rule:last-of-type { margin-bottom: 0; }
-.method-card__rule b { color: var(--tchelet-2); font-weight: 600; }
+.method-card__rule b { color: var(--tchelet-2); font-weight: 400; }
 
-.standard__scale { font-size: 1.1rem; line-height: 1.7; color: var(--txt-2); margin-block-end: 2.2rem; max-inline-size: 52ch; }
-.standard__scale b.mono { font-family: var(--fm); font-weight: 600; color: var(--txt); }
+/* שורת המספרים — בקנה מידה של סטטיסטיקת פתיח, לא משפט רגיל */
+.standard__stats { display: flex; flex-wrap: wrap; gap: clamp(1.6rem, 4vw, 3.2rem); margin-block-end: 1.2rem; }
+.standard__stat { min-width: 6rem; }
+.standard__stat b {
+  display: block; font-family: var(--fm); font-weight: 700; color: var(--txt);
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem); line-height: 1; letter-spacing: -.02em;
+}
+.standard__stat span { display: block; margin-block-start: .5rem; font-size: .82rem; color: var(--txt-3); }
+.standard__scaletxt { font-size: 1.02rem; line-height: 1.7; color: var(--txt-2); margin-block-end: 3rem; max-inline-size: 52ch; }
 
-.standard__anatomy { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin-block-end: 2.4rem; }
+.standard__anatomy { display: flex; flex-wrap: wrap; gap: 2.4rem; align-items: center; margin-block-end: 3rem; }
 .anatomy__txt { flex: 1 1 18rem; min-width: 16rem; }
-.anatomy__txt h3 { font-family: var(--fd); font-weight: 400; font-size: 1.4rem; margin: 0 0 .7rem; }
-.anatomy__txt p { color: var(--txt-2); line-height: 1.65; margin: 0; max-inline-size: 30rem; }
+.anatomy__txt h3 { font-family: var(--fd); font-weight: 400; font-size: clamp(1.5rem, 2.4vw, 1.9rem); margin: 0 0 .8rem; }
+.anatomy__txt p { color: var(--txt-2); line-height: 1.7; margin: 0; max-inline-size: 30rem; font-size: 1.02rem; }
 
-.schema { flex: 1 1 18rem; min-width: 16rem; border: 1px solid var(--line-2); border-radius: 14px; background: var(--card); padding: 1.4rem 1.5rem; }
-.schema__cap { font: 500 .68rem var(--fm); color: var(--txt-3); letter-spacing: .08em; text-transform: uppercase; margin-block-end: 1.1rem; }
-.schema__row { display: flex; align-items: center; gap: .8rem; margin-block-end: .9rem; }
+.schema { flex: 1 1 18rem; min-width: 16rem; border: 1px solid var(--line-2); border-radius: 14px; background: var(--card); padding: 1.6rem 1.7rem; }
+.schema__cap { font: 500 .68rem var(--fm); color: var(--txt-3); letter-spacing: .08em; text-transform: uppercase; margin-block-end: 1.2rem; }
+.schema__row { display: flex; align-items: center; gap: .8rem; margin-block-end: 1rem; }
 .schema__row:last-of-type { margin-bottom: 0; }
 .schema__k { flex: none; width: 5.5rem; font-size: .88rem; color: var(--txt-2); }
 .schema__bars { display: flex; gap: 3px; flex: 1; }
-.schema__bar { flex: 1; height: 1rem; border-radius: 3px; background: var(--line-2); }
+.schema__bar { flex: 1; height: 1.15rem; border-radius: 3px; background: var(--line-2); }
 .schema__bar.on { background: var(--sv, var(--s3)); }
 .schema__v { font-weight: 600; }
 .schema__badge {
-  display: inline-flex; padding: .28rem .65rem; border-radius: 999px; font-size: .78rem; font-weight: 600;
+  display: inline-flex; padding: .3rem .7rem; border-radius: 999px; font-size: .8rem; font-weight: 600;
   background: color-mix(in srgb, var(--tchelet-2) 18%, transparent);
   color: var(--tchelet-2); border: 1px solid color-mix(in srgb, var(--tchelet-2) 40%, transparent);
 }
-.schema__note { margin: 1rem 0 0; padding-top: .9rem; border-top: 1px solid var(--line-2); font-size: .85rem; line-height: 1.55; color: var(--txt-2); }
+.schema__note { margin: 1.1rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line-2); font-size: .86rem; line-height: 1.55; color: var(--txt-2); }
 
-.exclusions { max-inline-size: 40rem; }
-.exclusions__h { font-family: var(--fd); font-weight: 400; font-size: 1.7rem; margin: 0 0 1.3rem; }
-.excl-line { font-size: 1.05rem; line-height: 1.55; color: var(--txt); padding: .9rem 0; border-block-end: 1px solid var(--line-2); position: relative; }
+/* ── הפרק השיא: השורה השחורה ──
+   רצועה כהה במלוא הרוחב, שנפרדת חזותית מכל השאר — בדיוק ההיגיון של
+   "act" עם ground משלו בסקייל המקורי: לא כותרת עוד קטנה יותר, אלא
+   שינוי מוחשי של הקרקע שמסמן "כאן זה השיא". השורות נכנסות אחת-אחת
+   עם קפיצת קנה מידה, לא רק דהייה, כדי שהתנועה תרגיש כמו הכרעה. */
+.exclusions-band {
+  position: relative; z-index: 1; background: color-mix(in srgb, #05070C 88%, var(--bg));
+  margin-block-start: 1rem; padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(3.5rem, 8vw, 6rem);
+}
+[data-theme="light"] .exclusions-band { background: #14181F; }
+.exclusions-band::before {
+  content: ""; position: absolute; inset-block-start: 0; inset-inline: 0; block-size: 2px;
+  background: linear-gradient(90deg, transparent, var(--s4) 30%, var(--s4) 70%, transparent);
+}
+.exclusions { max-inline-size: 42rem; margin-inline: auto; padding-inline: var(--pad); }
+.exclusions__h {
+  font-family: var(--fd); font-weight: 400; color: #F1EBDD;
+  font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.08; margin: 0 0 2.4rem;
+}
+.excl-line {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem); line-height: 1.5; color: #C7CEDE;
+  padding: 1.3rem 0; border-block-end: 1px solid rgba(255,255,255,.1); position: relative;
+  opacity: 0; transform: translateY(18px) scale(.98);
+  transition: opacity .6s var(--e), transform .6s var(--e);
+}
+.excl-line.is-in { opacity: 1; transform: translateY(0) scale(1); }
 .excl-line:last-child { border-bottom: 0; }
 .excl-line b { color: var(--s4); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .excl-line { transition: opacity .2s linear; transform: none; }
+}
+
+/* התקציר: מופיע אחרי כל השורות, כדי שהתשלום הרגשי של "ראיתי את כל
+   התקן" יקרה כאן — בדיוק ברגע שהעין כבר נמצאת ברצועה הכהה — ולא רק
+   בשוליים הדביקים שכבר לא נראים כשמגיעים לפה. */
+.exclrecap {
+  margin-block-start: 2.6rem; padding-block-start: 2rem; border-block-start: 1px solid rgba(255,255,255,.12);
+  opacity: 0; transform: translateY(14px); transition: opacity .6s var(--e) .1s, transform .6s var(--e) .1s;
+}
+.exclrecap.is-in { opacity: 1; transform: translateY(0); }
+.exclrecap__cap {
+  display: block; font: 600 .68rem var(--fm); letter-spacing: .1em; text-transform: uppercase;
+  color: #7E8AA8; margin-block-end: 1rem;
+}
+.exclrecap__row { display: flex; flex-wrap: wrap; gap: .6rem; }
+.exclrecap__chip {
+  display: inline-flex; align-items: center; gap: .4rem; padding: .45rem .9rem;
+  border-radius: 999px; font-size: .82rem; font-weight: 600; border: 1.5px solid currentColor;
+}
+.exclrecap__chip[data-k="in"] { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); }
+.exclrecap__chip[data-k="out"] { color: var(--s4); background: color-mix(in srgb, var(--s4) 10%, transparent); }
 
 @media (max-width: 979px) {
   .standard__in { grid-template-columns: 1fr; }
   .stdrail { display: none; }
+  .standard__star { inline-size: 70vw; block-size: 70vw; inset-inline-end: -20vw; }
 }

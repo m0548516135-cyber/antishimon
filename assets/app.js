@@ -1273,7 +1273,8 @@ function figures() {
    על כל האלמנט — בדיוק מה שהיה מוחק את הילדים האלה בכל החלפת שפה. */
 function renderStandardText() {
   var col = $("#standardCol");
-  if (!col) return;
+  var band = $("#exclBand");
+  if (!col || !band) return;
 
   col.innerHTML =
     '<h2 class="standard__h rv" id="stdH">' + t("מה בדיוק נכנס למרשם?") + "</h2>" +
@@ -1287,12 +1288,14 @@ function renderStandardText() {
       '<span class="stdrail__trig" data-stamp="in" data-stamp-text="' + esc(t("ממצא רשמי — נכנס")) + '"></span>' +
     "</div>" +
 
-    '<p class="standard__scale rv" id="stdScale">' +
-      t("לא הצהרת כוונות:") + ' <b class="mono" data-to-live="total">0</b> ' + t("גופים במרשם") + ", " +
-      t("מ־") + '<b class="mono" data-to-live="countries">0</b> ' + t("מדינות") + ", " +
-      t("מגובים ב־") + '<b class="mono" data-to-live="sources">0</b> ' + t("מקורות עצמאיים") + ". " +
-      '<b class="mono" data-to-live="month">0</b> ' + t("נוספו בחודש האחרון בלבד — המרשם הזה מתעדכן, לא נבנה פעם אחת ונשכח.") +
-    "</p>" +
+    /* מספרים בקנה מידה של פתיח — לא עוד משפט עם ספרה מוטבעת בו */
+    '<div class="standard__stats rv">' +
+      '<div class="standard__stat"><b class="mono" data-to-live="total">0</b><span>' + t("גופים במרשם") + "</span></div>" +
+      '<div class="standard__stat"><b class="mono" data-to-live="countries">0</b><span>' + t("מדינות") + "</span></div>" +
+      '<div class="standard__stat"><b class="mono" data-to-live="sources">0</b><span>' + t("מקורות עצמאיים") + "</span></div>" +
+      '<div class="standard__stat"><b class="mono" data-to-live="month">0</b><span>' + t("נוספו החודש") + "</span></div>" +
+    "</div>" +
+    '<p class="standard__scaletxt rv">' + t("לא הצהרת כוונות — המרשם הזה מתעדכן כל יום, לא נבנה פעם אחת ונשכח.") + "</p>" +
 
     '<div class="standard__anatomy rv">' +
       '<div class="anatomy__txt">' +
@@ -1314,9 +1317,12 @@ function renderStandardText() {
           '<span class="schema__badge">' + t("החלטת הגוף") + "</span></div>" +
         '<p class="schema__note">' + t("״דברי הנהלה״ מסומן בנפרד מ״החלטת הגוף״ — הבחנה שהמרשם אוכף בכל רשומה.") + "</p>" +
       "</div>" +
-    "</div>" +
+    "</div>";
 
-    '<div class="exclusions rv">' +
+  /* הפרק השיא: רצועה נפרדת, כהה, במלוא הרוחב — לא רשום עוד בתוך
+     עמודת ה-46rem, כדי שבאמת ירגיש כמו קרקע אחרת ולא עוד פסקה. */
+  band.innerHTML =
+    '<div class="exclusions">' +
       '<h3 class="exclusions__h">' + t("ומה לא נכנס — באותה בולטות") + "</h3>" +
       '<p class="excl-line"><b>' + t("שמועה או ״לפי מקורות״") + "</b> " + t("— לא נכנס.") +
         '<span class="stdrail__trig" data-stamp="out" data-stamp-text="' + esc(t("שמועה — לא נכנס")) + '"></span></p>' +
@@ -1327,10 +1333,27 @@ function renderStandardText() {
       '<p class="excl-line"><b>' + t("ביקורת על מדיניות ישראל בלבד") + "</b> " + t("— לא נכנס.") + " " +
         t("זו אינה אנטישמיות, וסולם החומרה מפריד ביניהן במפורש.") +
         '<span class="stdrail__trig" data-stamp="out" data-stamp-text="' + esc(t("ביקורת מדיניות בלבד — לא נכנס")) + '"></span></p>' +
+      /* השוליים הדביקים לא ממשיכים לרצועה הכהה הזאת — sticky עובד רק
+         בתוך .standard, והרצועה הזאת יושבת אחריו כאחות נפרדת. במקום
+         מנגנון sticky מורכב שחוצה שני סקשנים, התקציר חוזר כאן: בדיוק
+         ברגע שהקורא סיים לקרוא את מה שלא נכנס, הוא רואה את כל התקן
+         שלם באותה נשימה, בלי לגלול חזרה למעלה. */
+      '<div class="exclrecap" id="exclRecap" aria-hidden="true">' +
+        '<span class="exclrecap__cap">' + t("התקן המלא") + "</span>" +
+        '<div class="exclrecap__row">' +
+          '<span class="exclrecap__chip" data-k="in">✓ ' + esc(t("עמדה שהוכרזה בעצמה")) + "</span>" +
+          '<span class="exclrecap__chip" data-k="in">✓ ' + esc(t("ממצא רשמי")) + "</span>" +
+          '<span class="exclrecap__chip" data-k="out">✗ ' + esc(t("שמועה")) + "</span>" +
+          '<span class="exclrecap__chip" data-k="out">✗ ' + esc(t("ציטוט בלי תמליל")) + "</span>" +
+          '<span class="exclrecap__chip" data-k="out">✗ ' + esc(t("פרשנות פרשן")) + "</span>" +
+          '<span class="exclrecap__chip" data-k="out">✗ ' + esc(t("ביקורת מדיניות בלבד")) + "</span>" +
+        "</div>" +
+      "</div>" +
     "</div>";
 
   standardScale();
   stdRail(true);
+  exclCascade(true);
 }
 
 /* ── התקן: מספרים אמיתיים בתוך המשפט ──
@@ -1387,6 +1410,37 @@ function stdRail(reset) {
     STD_RAIL_IO.observe(el);
   });
 }
+/* ── הפרק השיא: קסקדה ──
+   שורות ה"לא נכנס" נכנסות אחת-אחת עם קפיצת קנה מידה, לא רק דהייה —
+   ההבדל בין "עוד פסקה שהופיעה" לבין "החלטה שנופלת". IntersectionObserver
+   נפרד מ-reveal() הרגיל כי הסטגר כאן צריך להיות איטי וברור, לא 45ms. */
+var EXCL_IO = null;
+function exclCascade(reset) {
+  var lines = document.querySelectorAll(".excl-line");
+  var recap = $("#exclRecap");
+  if (!lines.length) return;
+  if (reset && EXCL_IO) { EXCL_IO.disconnect(); EXCL_IO = null; }
+  if (LESS_MOTION || !("IntersectionObserver" in window)) {
+    Array.prototype.forEach.call(lines, function (el) { el.classList.add("is-in"); });
+    if (recap) recap.classList.add("is-in");
+    return;
+  }
+  if (EXCL_IO) return;
+  EXCL_IO = new IntersectionObserver(function (rows) {
+    rows.forEach(function (r) {
+      if (!r.isIntersecting) return;
+      r.target.classList.add("is-in");
+      EXCL_IO.unobserve(r.target);
+    });
+  }, { rootMargin: "0px 0px -15% 0px", threshold: 0.35 });
+  Array.prototype.forEach.call(lines, function (el, i) {
+    el.style.transitionDelay = (i * 90) + "ms";
+    EXCL_IO.observe(el);
+  });
+  /* התקציר מגיע אחרי — ברגע שהקורא כבר עבר את כל השורות, לא לפני */
+  if (recap) EXCL_IO.observe(recap);
+}
+
 function stdStampHTML(el, shown) {
   var k = el.dataset.stamp, txt = el.dataset.stampText;
   return '<li class="stdrail__stamp' + (shown ? " is-in" : "") + '" data-k="' + k + '">' +

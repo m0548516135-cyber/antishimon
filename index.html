@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>אנטישימון — לדעת את מי אתם מממנים</title>
 <meta name="description" content="מרשם מתועד של חברות, מוסדות ואנשים שהכריזו על עמדה אנטי-ישראלית או שנקבע לגביהם ממצא רשמי בנושא אנטישמיות. חיפוש לפי קטגוריה, אזור וחומרה — כל רשומה עם מקורות.">
-<link rel="stylesheet" href="assets/fonts.css?v=20260913235112">
-<link rel="stylesheet" href="assets/styles.css?v=20260913235112">
+<link rel="stylesheet" href="assets/fonts.css?v=20260914000946">
+<link rel="stylesheet" href="assets/styles.css?v=20260914000946">
 
 <!-- התקנה למסך הבית -->
 <meta property="og:title" content="אנטישימון — לדעת את מי אתם מממנים">
@@ -163,9 +163,16 @@
      בין הפתיח לסינון: לפני שמחפשים, מה בדיוק אומר "יש רשומה". התקן
      המלא של המרשם, כולל מה לא נכנס — באותה בולטות של מה שכן. -->
 <section class="standard" aria-labelledby="stdH">
-  <div class="standard__in">
+  <!-- מגן דוד כסימן מים — אותו מוטיב מהפתיח, כדי שהקטע ירגיש כהמשך
+       של אותה שפה חזותית ולא כתוסף מודבק. -->
+  <svg class="standard__star" viewBox="0 0 200 200" aria-hidden="true">
+    <path d="M100 8 179.7 146 20.3 146Z"/>
+    <path d="M100 192 20.3 54 179.7 54Z"/>
+  </svg>
 
+  <div class="standard__in">
     <aside class="stdrail" id="stdRail" aria-hidden="true">
+      <div class="stdrail__cap" data-i18n="התקן, תוך כדי גלילה">התקן, תוך כדי גלילה</div>
       <ul class="stdrail__list" id="stdRailList"></ul>
     </aside>
 
@@ -175,6 +182,9 @@
     <div class="standard__col" id="standardCol"></div>
   </div>
 </section>
+
+<!-- הפרק השיא: רצועה כהה במלוא הרוחב, נפרדת מכל השאר. -->
+<div class="exclusions-band" id="exclBand"></div>
 
 <!-- ══════ סינון ══════ -->
 <section class="filters">
@@ -373,19 +383,19 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-<script src="assets/config.js?v=20260913235112"></script>
-<script src="assets/i18n.js?v=20260913235112"></script>
-<script src="assets/data-world.js?v=20260913235112"></script>
-<script src="assets/i18n-data.js?v=20260913235112"></script>
-<script src="assets/data-cc.js?v=20260913235112"></script>
-<script src="assets/data-geo.js?v=20260913235112"></script>
-<script src="assets/data-places.js?v=20260913235112"></script>
-<script src="assets/data.js?v=20260913235112"></script>
-<script src="assets/data-support.js?v=20260913235112"></script>
-<script src="assets/data-signers.js?v=20260913235112"></script>
+<script src="assets/config.js?v=20260914000946"></script>
+<script src="assets/i18n.js?v=20260914000946"></script>
+<script src="assets/data-world.js?v=20260914000946"></script>
+<script src="assets/i18n-data.js?v=20260914000946"></script>
+<script src="assets/data-cc.js?v=20260914000946"></script>
+<script src="assets/data-geo.js?v=20260914000946"></script>
+<script src="assets/data-places.js?v=20260914000946"></script>
+<script src="assets/data.js?v=20260914000946"></script>
+<script src="assets/data-support.js?v=20260914000946"></script>
+<script src="assets/data-signers.js?v=20260914000946"></script>
 <!-- שכבת מועמדים מהסוכן היומי. הקובץ עשוי לא להתקיים — זה תקין. -->
-<script src="assets/data-incoming.js?v=20260913235112"></script>
-<script src="assets/api.js?v=20260913235112"></script>
-<script src="assets/app.js?v=20260913235112"></script>
+<script src="assets/data-incoming.js?v=20260914000946"></script>
+<script src="assets/api.js?v=20260914000946"></script>
+<script src="assets/app.js?v=20260914000946"></script>
 </body>
 </html>
