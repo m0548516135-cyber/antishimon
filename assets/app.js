@@ -1264,6 +1264,134 @@ function figures() {
   });
 
   $("#upd").textContent = fmtDate(META.updated);
+  standardScale();
+}
+
+/* ── התקן: הפרוזה ──
+   נבנה פעם אחת ב-JS ולא ב-data-i18n סטטי, כי כמה שורות כאן מכילות
+   גם <b> וגם ספרות חיות. applyStaticLang() הרגיל עושה textContent
+   על כל האלמנט — בדיוק מה שהיה מוחק את הילדים האלה בכל החלפת שפה. */
+function renderStandardText() {
+  var col = $("#standardCol");
+  if (!col) return;
+
+  col.innerHTML =
+    '<h2 class="standard__h rv" id="stdH">' + t("מה בדיוק נכנס למרשם?") + "</h2>" +
+
+    '<div class="method-card rv">' +
+      '<p class="method-card__rule"><b>' + t("עמדה שהוכרזה בעצמה.") + "</b> " +
+        t("הצבעת חברים, החלטת דירקטוריון, הודעה רשמית של הגוף.") + "</p>" +
+      '<p class="method-card__rule"><b>' + t("או ממצא רשמי.") + "</b> " +
+        t("פסק דין, קנס רגולטורי, הודעת הפרה של רשות ממשלתית.") + "</p>" +
+      '<span class="stdrail__trig" data-stamp="in" data-stamp-text="' + esc(t("עמדה שהוכרזה בעצמה — נכנס")) + '"></span>' +
+      '<span class="stdrail__trig" data-stamp="in" data-stamp-text="' + esc(t("ממצא רשמי — נכנס")) + '"></span>' +
+    "</div>" +
+
+    '<p class="standard__scale rv" id="stdScale">' +
+      t("לא הצהרת כוונות:") + ' <b class="mono" data-to-live="total">0</b> ' + t("גופים במרשם") + ", " +
+      t("מ־") + '<b class="mono" data-to-live="countries">0</b> ' + t("מדינות") + ", " +
+      t("מגובים ב־") + '<b class="mono" data-to-live="sources">0</b> ' + t("מקורות עצמאיים") + ". " +
+      '<b class="mono" data-to-live="month">0</b> ' + t("נוספו בחודש האחרון בלבד — המרשם הזה מתעדכן, לא נבנה פעם אחת ונשכח.") +
+    "</p>" +
+
+    '<div class="standard__anatomy rv">' +
+      '<div class="anatomy__txt">' +
+        "<h3>" + t("בתוך רשומה אחת") + "</h3>" +
+        "<p>" + t("כל רשומה נושאת שלושה דברים בו־זמנית: כמה חמור הנטען, כמה מקורות פתוחים מגבים אותו, ומי בדיוק עשה את המעשה. השדה השלישי הוא זה שהכי קל לפספס: מנכ״ל שהתבטא אינו החלטה של החברה — אחרת אנשים זורקים מוצר בגלל ציוץ של אדם אחד.") + "</p>" +
+      "</div>" +
+      '<div class="schema">' +
+        '<div class="schema__cap">' + t("סכימה להמחשה — לא רשומה אמיתית") + "</div>" +
+        '<div class="schema__row"><span class="schema__k">' + t("חומרה") + '</span>' +
+          '<div class="schema__bars">' +
+            '<span class="schema__bar on" style="--sv: var(--s1)"></span>' +
+            '<span class="schema__bar on" style="--sv: var(--s2)"></span>' +
+            '<span class="schema__bar on" style="--sv: var(--s3)"></span>' +
+            '<span class="schema__bar" style="--sv: var(--s4)"></span>' +
+          "</div></div>" +
+        '<div class="schema__row"><span class="schema__k">' + t("מקורות") + '</span>' +
+          '<span class="mono schema__v">' + t("3 פתוחים") + "</span></div>" +
+        '<div class="schema__row"><span class="schema__k">' + t("מי עשה") + '</span>' +
+          '<span class="schema__badge">' + t("החלטת הגוף") + "</span></div>" +
+        '<p class="schema__note">' + t("״דברי הנהלה״ מסומן בנפרד מ״החלטת הגוף״ — הבחנה שהמרשם אוכף בכל רשומה.") + "</p>" +
+      "</div>" +
+    "</div>" +
+
+    '<div class="exclusions rv">' +
+      '<h3 class="exclusions__h">' + t("ומה לא נכנס — באותה בולטות") + "</h3>" +
+      '<p class="excl-line"><b>' + t("שמועה או ״לפי מקורות״") + "</b> " + t("— לא נכנס.") +
+        '<span class="stdrail__trig" data-stamp="out" data-stamp-text="' + esc(t("שמועה — לא נכנס")) + '"></span></p>' +
+      '<p class="excl-line"><b>' + t("ציטוט בלי תמליל או הקלטה") + "</b> " + t("— לא נכנס.") +
+        '<span class="stdrail__trig" data-stamp="out" data-stamp-text="' + esc(t("ציטוט בלי תמליל — לא נכנס")) + '"></span></p>' +
+      '<p class="excl-line"><b>' + t("פרשנות של פרשן, לא עובדה") + "</b> " + t("— לא נכנס.") +
+        '<span class="stdrail__trig" data-stamp="out" data-stamp-text="' + esc(t("פרשנות פרשן — לא נכנס")) + '"></span></p>' +
+      '<p class="excl-line"><b>' + t("ביקורת על מדיניות ישראל בלבד") + "</b> " + t("— לא נכנס.") + " " +
+        t("זו אינה אנטישמיות, וסולם החומרה מפריד ביניהן במפורש.") +
+        '<span class="stdrail__trig" data-stamp="out" data-stamp-text="' + esc(t("ביקורת מדיניות בלבד — לא נכנס")) + '"></span></p>' +
+    "</div>";
+
+  standardScale();
+  stdRail(true);
+}
+
+/* ── התקן: מספרים אמיתיים בתוך המשפט ──
+   אותם חישובים בדיוק כמו figures() — לא נתון חדש, רק מוצג בהקשר אחר,
+   כדי שלא יהיו שני מקורות אמת לאותו מספר. */
+function standardScale() {
+  var els = document.querySelectorAll("[data-to-live]");
+  if (!els.length) return;
+  var urls = {}, co = {};
+  DB.forEach(function (e) {
+    e.sources.forEach(function (s) { if (s.url) urls[s.url] = 1; });
+    if (e.location.country) co[e.location.country] = 1;
+  });
+  var by = {
+    total: DB.length,
+    countries: Object.keys(co).length,
+    sources: Object.keys(urls).length,
+    month: freshCount(30)
+  };
+  Array.prototype.forEach.call(els, function (el) {
+    var v = by[el.dataset.toLive];
+    if (v != null) countUp(el, v);
+  });
+}
+
+/* ── התקן: "החותמת" — התור המתמלא בשוליים ──
+   כל כלל בתקן — מה נכנס ומה לא — מקבל טריגר בלתי-נראה. בפעם הראשונה
+   שהוא נכנס למסך נחתמת שורה בשוליים ונשארת שם, כך שבתחתית הקטע יש
+   רשימה מלאה וקריאה של כל התקן שעברו עליו. */
+var STD_RAIL_IO = null;
+function stdRail(reset) {
+  var list = $("#stdRailList");
+  if (!list) return;
+  if (reset && STD_RAIL_IO) { STD_RAIL_IO.disconnect(); STD_RAIL_IO = null; }
+  if (reset) list.innerHTML = "";
+  if (STD_RAIL_IO) return;
+  if (LESS_MOTION || !("IntersectionObserver" in window)) {
+    /* בלי אנימציה — כל הכללים מופיעים ישר, כדי שהמידע לא יאבד. */
+    Array.prototype.forEach.call(document.querySelectorAll("[data-stamp]"), function (el) {
+      list.insertAdjacentHTML("beforeend", stdStampHTML(el, true));
+    });
+    return;
+  }
+  STD_RAIL_IO = new IntersectionObserver(function (rows) {
+    rows.forEach(function (r) {
+      if (!r.isIntersecting) return;
+      list.insertAdjacentHTML("beforeend", stdStampHTML(r.target, false));
+      var li = list.lastElementChild;
+      requestAnimationFrame(function () { li.classList.add("is-in"); });
+      STD_RAIL_IO.unobserve(r.target);
+    });
+  }, { rootMargin: "0px 0px -35% 0px", threshold: 0.6 });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-stamp]"), function (el) {
+    STD_RAIL_IO.observe(el);
+  });
+}
+function stdStampHTML(el, shown) {
+  var k = el.dataset.stamp, txt = el.dataset.stampText;
+  return '<li class="stdrail__stamp' + (shown ? " is-in" : "") + '" data-k="' + k + '">' +
+    '<span class="stdrail__mark">' + (k === "in" ? "✓" : "✗") + "</span>" +
+    '<span class="stdrail__txt">' + esc(txt) + "</span></li>";
 }
 
 /* ── רשימת מעקב ומה חדש ───────────────────────────────────────────────────
@@ -3764,6 +3892,7 @@ function init() {
 
   heroCanvas();
   navShrink();
+  renderStandardText();
   reveal();
 
   var m = /^#\/e\/(.+)$/.exec(location.hash);
@@ -3868,6 +3997,8 @@ function init() {
         case "lang":
           setLang(LANG === "he" ? "en" : "he");
           fillSelects();
+          renderStandardText();
+          reveal();
           render();
           return;
         case "theme":

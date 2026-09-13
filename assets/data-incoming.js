@@ -9,8 +9,1130 @@
    ========================================================================= */
 
 window.ANTISHIMON_INCOMING = {
-  generated: "2026-08-30",
+  generated: "2026-09-13",
   entries: [
+    {
+      "id": "inc-20260913-01",
+      "name": "ממשלת בריטניה — איסור ייבוא מהתנחלויות",
+      "aliases": [
+        "UK Government",
+        "FCDO",
+        "Foreign Commonwealth and Development Office"
+      ],
+      "type": "org",
+      "actor": "entity",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": "לונדון"
+      },
+      "scope": "global",
+      "severity": 2,
+      "status": "review",
+      "summary": "ב-8 בספטמבר 2026 הכריז שר החוץ הבריטי אד מיליבנד בפרלמנט על איסור ייבוא סחורות מהתנחלויות הישראליות בגדה המערבית ומהשכונות היהודיות במזרח ירושלים. מיליבנד תיאר את פעילות המתנחלים כ\"גירוש אתני של פלסטינים\" ואמר שממשלת ישראל \"עוצמת את עיניה\" לפעילות זו. הצו צפוי להיכנס לתוקף תוך תשעה חודשים ויחול על מרבית הסחורות, למעט פריטים דתיים ותרופות. ישראל הגיבה בסגירת הקונסוליה הבריטית במזרח ירושלים.",
+      "summaryEn": "On 8 September 2026, UK Foreign Secretary Ed Miliband announced in Parliament a ban on imports of goods from Israeli West Bank settlements and Jewish neighborhoods of East Jerusalem. Miliband described settler activity as 'ethnic cleansing of Palestinians' and accused the Israeli government of 'turning a blind eye.' The ban is set to take effect within nine months, covering most goods with exemptions for religious items and medications. Israel responded by closing the British consulate in East Jerusalem.",
+      "tags": [
+        "עמדה מדינית",
+        "סחר",
+        "ממשל",
+        "יהודה ושומרון"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-08",
+          "publisher": "Human Rights Watch",
+          "title": "UK, France, Canada Ban Trade With Israel's Illegal Settlements",
+          "url": "https://www.hrw.org/news/2026/09/08/uk-france-canada-ban-trade-with-israels-illegal-settlements"
+        },
+        {
+          "date": "2026-09-08",
+          "publisher": "ABC News (Australia)",
+          "title": "Israel to close UK consulate as three G7 countries ban imports from West Bank settlements",
+          "url": "https://www.abc.net.au/news/2026-09-08/three-g7-countries-announce-import-ban-on-goods-from-settlements/107130998",
+          "quote": "settler terrorists were engaged in ethnic cleansing of Palestinians in the West Bank"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-08",
+      "added": "2026-09-13"
+    },
+    {
+      "id": "inc-20260913-02",
+      "name": "ממשלת צרפת — איסור ייבוא מהתנחלויות",
+      "aliases": [
+        "French Government",
+        "Gouvernement français"
+      ],
+      "type": "org",
+      "actor": "entity",
+      "parent": "",
+      "location": {
+        "country": "צרפת",
+        "region": "eu",
+        "city": "פריז"
+      },
+      "scope": "global",
+      "severity": 2,
+      "status": "review",
+      "summary": "ב-8 בספטמבר 2026 הצטרפה ממשלת צרפת להכרזה המשותפת עם בריטניה, קנדה ומדינות נוספות על איסור ייבוא סחורות מהתנחלויות הישראליות. שר החוץ הצרפתי ז׳אן-נואל ברו פרסם ברשתות החברתיות: \"מדוע אנו עושים זאת? כי הגדה המערבית קרובה להתפוצץ — יש התרחבות עצומה של ההתנחלויות, גל של אלימות נגד פלסטינים ומעשי טרור.\"",
+      "summaryEn": "On 8 September 2026, France joined the UK, Canada, and other countries in a joint announcement banning imports from Israeli settlements. French Foreign Minister Jean-Noël Barrot posted on social media: 'Why are we doing this? Because the West Bank is close to exploding — there is frenzied expansion of the settlements, a flare-up of violence against Palestinians by extremist settlers, and acts of terror.'",
+      "tags": [
+        "עמדה מדינית",
+        "סחר",
+        "ממשל",
+        "יהודה ושומרון"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-08",
+          "publisher": "Human Rights Watch",
+          "title": "UK, France, Canada Ban Trade With Israel's Illegal Settlements",
+          "url": "https://www.hrw.org/news/2026/09/08/uk-france-canada-ban-trade-with-israels-illegal-settlements"
+        },
+        {
+          "date": "2026-09-08",
+          "publisher": "ABC News (Australia)",
+          "title": "Israel to close UK consulate as three G7 countries ban imports from West Bank settlements",
+          "url": "https://www.abc.net.au/news/2026-09-08/three-g7-countries-announce-import-ban-on-goods-from-settlements/107130998",
+          "quote": "The West Bank is close to exploding — there is frenzied expansion of the settlements, a flare-up of violence against Palestinians by extremist settlers, and acts of terror"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-08",
+      "added": "2026-09-13"
+    },
+    {
+      "id": "inc-20260913-03",
+      "name": "ממשלת קנדה — איסור ייבוא מהתנחלויות",
+      "aliases": [
+        "Government of Canada",
+        "Gouvernement du Canada"
+      ],
+      "type": "org",
+      "actor": "entity",
+      "parent": "",
+      "location": {
+        "country": "קנדה",
+        "region": "na",
+        "city": "אוטווה"
+      },
+      "scope": "global",
+      "severity": 2,
+      "status": "review",
+      "summary": "ב-8 בספטמבר 2026 הצטרפה ממשלת קנדה, בהנהגת ראש הממשלה מארק קארני, להכרזה המשותפת עם בריטניה, צרפת ומדינות נוספות על איסור ייבוא סחורות מהתנחלויות הישראליות בגדה המערבית. בהצהרה המשותפת הזהירו ראשי הממשלות כי ההתנחלויות \"מהוות איום ישיר ודחוף\" על פתרון שתי המדינות.",
+      "summaryEn": "On 8 September 2026, Canada under Prime Minister Mark Carney joined the UK, France, and other countries in a joint announcement banning imports from Israeli West Bank settlements. In their joint declaration, the leaders warned that the settlements 'pose a direct and urgent threat' to a two-state solution.",
+      "tags": [
+        "עמדה מדינית",
+        "סחר",
+        "ממשל",
+        "יהודה ושומרון"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-08",
+          "publisher": "Human Rights Watch",
+          "title": "UK, France, Canada Ban Trade With Israel's Illegal Settlements",
+          "url": "https://www.hrw.org/news/2026/09/08/uk-france-canada-ban-trade-with-israels-illegal-settlements"
+        },
+        {
+          "date": "2026-09-08",
+          "publisher": "ABC News (Australia)",
+          "title": "Israel to close UK consulate as three G7 countries ban imports from West Bank settlements",
+          "url": "https://www.abc.net.au/news/2026-09-08/three-g7-countries-announce-import-ban-on-goods-from-settlements/107130998"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-08",
+      "added": "2026-09-13"
+    },
+    {
+      "id": "inc-20260911-01",
+      "name": "אדידס",
+      "aliases": [
+        "Adidas",
+        "adidas AG"
+      ],
+      "type": "company",
+      "actor": "entity",
+      "parent": "",
+      "location": {
+        "country": "גרמניה",
+        "region": "eu",
+        "city": "הרצוגנאורך"
+      },
+      "scope": "global",
+      "severity": 2,
+      "status": "review",
+      "summary": "ב-7 בספטמבר 2026 פרסמה המטה הגלובלי של אדידס הצהרה רשמית בה התנצלה על קמפיין שיווקי ישראלי שהציג את שלב ביטון, חייל לשעבר שאיבד את רגלו ב-2021, כחלק ממהלך 'נעל בודדת' לאנשים עם הבדל בגפיים. לאחר שפעילים אנטי-ישראליים, ובהם השחקן הספרדי חאווייר ברדם, קראו לחרם על אדידס בשל הפרסום, התנערה ההנהלה הגלובלית מהקמפיין וכינתה אותו 'אקטיבציה מקומית של צוות מקומי'. בהצהרה נאמר: 'לא הייתה לנו כוונה לפגוע וכואב לנו כל מי שנפגע.' החברה לא ביטלה את הקמפיין ולא הצהירה על שינוי מדיניות.",
+      "summaryEn": "On 7 September 2026, Adidas global headquarters issued an official statement apologizing for an Israeli market campaign that featured Shalev Biton, a former IDF soldier who lost his leg in 2021, as part of its 'single shoe' service for people with limb differences. After anti-Israel activists — including Spanish actor Javier Bardem — called for a boycott over the campaign, the global HQ distanced itself from the initiative, describing it as 'a recent local activation by the local team.' The statement read: 'It was never our intent to cause offense, and we apologize for anyone affected.' The company neither withdrew the campaign nor announced a change in policy.",
+      "tags": [
+        "BDS",
+        "לחץ אנטי-ישראלי",
+        "ספורט",
+        "ציוד ספורטיבי"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-07",
+          "publisher": "The Algemeiner",
+          "title": "Adidas Apologizes After Anti-Israel Agitators Urge Boycott Over Campaign Featuring Disabled IDF Veteran",
+          "url": "https://www.algemeiner.com/2026/09/07/adidas-apologizes-anti-israel-agitators-urge-boycott-campaign-featuring-disabled-idf-veteran/",
+          "quote": "We recognize that an image used in a recent local activation by the local team has raised concerns and strong reactions. It was never our intent to cause offense, and we apologize for anyone affected."
+        },
+        {
+          "date": "2026-09-07",
+          "publisher": "The Jerusalem Post",
+          "title": "Adidas apologizes for campaign featuring disabled IDF soldier following calls to boycott",
+          "url": "https://www.jpost.com/diaspora/antisemitism/article-907991"
+        },
+        {
+          "date": "2026-09-08",
+          "publisher": "The Times of Israel",
+          "title": "Adidas apologizes for 'offense' over promotion featuring ex-IDF soldier who lost leg in 2021",
+          "url": "https://www.timesofisrael.com/adidas-apologizes-for-offense-over-promotion-featuring-ex-idf-soldier-who-lost-leg-in-2021/"
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "Nike",
+          "note": "מתחרה ישיר בספורט; אין החלטה דומה ידועה"
+        },
+        {
+          "name": "New Balance",
+          "note": "מתחרה ישיר בספורט; אין החלטה דומה ידועה"
+        }
+      ],
+      "updated": "2026-09-07",
+      "added": "2026-09-11"
+    },
+    {
+      "id": "inc-20260911-02",
+      "name": "ראול מורלס",
+      "aliases": [
+        "Raul Morales"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": "ניו יורק"
+      },
+      "scope": "local",
+      "severity": 4,
+      "status": "review",
+      "summary": "ב-8 בספטמבר 2026 הגיש לשכת התובע המחוזי של מנהטן כתב אישום נגד ראול מורלס (51) בגין שתי תקיפות שביצע ב-23 ביולי 2026 בלואר ווסט סייד של ניו יורק, בסמיכות לשתי בתי כנסת. בתקיפה הראשונה ברחוב 84 מערב, דקר מורלס גבר בן 57 מאחור בסכין תוך שהוא צועק 'אללה אכבר'. בתקיפה השנייה ברחוב 86 מערב, דקר את משה גרונהאוס (50), אשר לבש כיפה, בחזהו בבורג. שניהם שרדו; הראשון נזקק לניתוח חירום. על מכשירו נמצאו הודעות אנטישמיות. מורלס הואשם בניסיון רצח בדרגה שנייה כפשע שנאה, תקיפה בדרגה ראשונה כפשע שנאה ועבירות נוספות, עם חשיפה מקסימלית לעד 40 שנות מאסר.",
+      "summaryEn": "On 8 September 2026, the Manhattan District Attorney's Office filed an indictment against Raul Morales, 51, for two attacks he carried out on 23 July 2026 on Manhattan's Upper West Side, near two synagogues. In the first attack on West 84th Street, Morales stabbed a 57-year-old man in the back with a knife while shouting 'Allahu Akbar.' In the second attack on West 86th Street, he stabbed Moshe Grunhaus, 50, who was wearing a kippah, in the chest with a screwdriver. Both survived; the first required emergency surgery. Antisemitic text messages were found on his phone. Morales was charged with second-degree attempted murder as a hate crime, first-degree assault as a hate crime, and additional charges, with a maximum exposure of 40 years in prison.",
+      "tags": [
+        "ממצא רשמי",
+        "אנטישמיות",
+        "אלימות",
+        "כתב אישום"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-08",
+          "publisher": "West Side Rag / Manhattan DA",
+          "title": "Man Indicted for Alleged Antisemitic Stabbings on the Upper West Side: Manhattan DA",
+          "url": "https://www.westsiderag.com/2026/09/08/man-indicted-for-alleged-antisemitic-stabbings-on-the-upper-west-side-manhattan-da"
+        },
+        {
+          "date": "2026-09-10",
+          "publisher": "The Times of Israel",
+          "title": "Suspect in stabbing of Jewish man in NYC charged with attempted murder as hate crime",
+          "url": "https://www.timesofisrael.com/suspect-in-stabbing-of-jewish-man-in-nyc-charged-with-attempted-murder-as-hate-crime/"
+        },
+        {
+          "date": "2026-09-10",
+          "publisher": "The Jerusalem Post",
+          "title": "Man accused of stabbing two men in antisemitic attacks in New York charged with hate crime",
+          "url": "https://www.jpost.com/diaspora/antisemitism/article-908310"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-08",
+      "added": "2026-09-11"
+    },
+    {
+      "id": "inc-20260911-03",
+      "name": "אינס איירס פריירה",
+      "aliases": [
+        "Inês Aires Pereira"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "פורטוגל",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "local",
+      "severity": 3,
+      "status": "review",
+      "summary": "ב-5 בספטמבר 2026 הודיעה השחקנית הפורטוגלית אינס איירס פריירה על פרישתה מפסטיבל MEO Commedia a La Carte Fest (29 אוקטובר – 1 נובמבר 2026, ליסבון), תוך שהיא מציינת את נוכחות ג'רי סיינפלד כאחד מכוכבי הפסטיבל. פריירה כתבה בהצהרתה: 'לא ניתן להיות שותפים לנרמול רצח עם.' מלבדה פרשו מהפסטיבל גם הצמד המוזיקלי Cebola Mol ואחרים. פריירה ידועה בעיקר מהטלוויזיה הפורטוגלית.",
+      "summaryEn": "On 5 September 2026, Portuguese actress Inês Aires Pereira announced her withdrawal from the MEO Commedia a La Carte Fest comedy festival (29 October – 1 November 2026, Lisbon), citing the presence of Jerry Seinfeld as one of the festival's headline performers. Pereira wrote in her statement: 'We cannot relativize or normalize a genocide.' The comedy duo Cebola Mol and several other acts also withdrew. Pereira is best known from Portuguese television.",
+      "tags": [
+        "חרם תרבותי",
+        "קומדיה",
+        "בידור"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-09",
+          "publisher": "The Jerusalem Post",
+          "title": "Portuguese artists pull out of Jerry Seinfeld-headlined festival",
+          "url": "https://www.jpost.com/diaspora/antisemitism/article-908009",
+          "quote": "We cannot relativize or normalize a genocide."
+        },
+        {
+          "date": "2026-09-09",
+          "publisher": "The Algemeiner",
+          "title": "Acts Pull Out of Portuguese Comedy Festival Over Jerry Seinfeld's Inclusion, Support for Israel",
+          "url": "https://www.algemeiner.com/2026/09/09/acts-pull-out-portuguese-comedy-festival-jerry-seinfelds-inclusion-support-israel/"
+        },
+        {
+          "date": "2026-09-09",
+          "publisher": "Combat Antisemitism Movement",
+          "title": "Portuguese Comedian Quits Jerry Seinfeld-Headlined Festival, Accuses Israel of 'Genocide'",
+          "url": "https://combatantisemitism.org/cam-news/portuguese-comedian-quits-jerry-seinfeld-headlined-festival-accuses-israel-of-genocide/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-05",
+      "added": "2026-09-11"
+    },
+    {
+      "id": "inc-20260911-04",
+      "name": "FKA Twigs",
+      "aliases": [
+        "Tahliah Debrett Barnett",
+        "Tahliah Barnett"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "השם FKA Twigs מופיע ברשימת החותמים הרשמית של Musicians for Palestine — המכתב הפתוח שפורסם ב-2021 ועליו חתמו מעל 600 מוזיקאים ואנשי תעשיית המוזיקה מרחבי העולם. החותמים קוראים לעמיתיהם לחרם על ישראל עד שתציית למשפט הבינלאומי, ומתחייבים לסרב להופיע במוסדות התרבות הישראליים המתוארים במכתב כשותפים לעוול. FKA Twigs (טאליה דברט בארנט), זמרת-יוצרת ובמאית בריטית, מופיעה ברשימה.",
+      "summaryEn": "The name FKA Twigs appears on the official signatory list of Musicians for Palestine — the open letter published in 2021 and signed by more than 600 musicians and music-industry professionals worldwide. The signatories call on fellow artists to boycott Israel until it complies with international law and pledge to refuse to perform at Israel's 'complicit cultural institutions.' FKA Twigs (Tahliah Debrett Barnett), a British singer-songwriter and director, appears on the list.",
+      "tags": [
+        "חרם תרבותי",
+        "עצומה",
+        "מוזיקה"
+      ],
+      "sources": [
+        {
+          "date": "2021",
+          "publisher": "Musicians for Palestine",
+          "title": "רשימת החותמים הרשמית — מכתב Musicians for Palestine (מקור ראשוני)",
+          "url": "https://musiciansforpalestine.net/2021-22-letter/",
+          "quote": "We call for you to join us with your name in refusing to perform at Israel's complicit cultural institutions"
+        },
+        {
+          "date": "2021-05-23",
+          "publisher": "Consequence",
+          "title": "600 musicians sign letter calling for Israel boycott in support of Palestine",
+          "url": "https://consequence.net/2021/05/musicians-for-palestine-israel-boycott/"
+        },
+        {
+          "date": "2021",
+          "publisher": "Rolling Stone",
+          "title": "Rage Against the Machine, Serj Tankian, Roger Waters Sign Letter Asking Artists to Boycott Israel",
+          "url": "https://www.rollingstone.com/music/music-news/rage-against-the-machine-serj-tankian-roger-waters-sign-open-letter-artists-boycott-israel-1175281/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2021",
+      "added": "2026-09-11"
+    },
+    {
+      "id": "inc-20260911-05",
+      "name": "נונייים",
+      "aliases": [
+        "Noname",
+        "Fatimah Nyeema Warner"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": "שיקגו"
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "השם Noname מופיע ברשימת החותמים הרשמית של Musicians for Palestine — המכתב הפתוח שפורסם ב-2021 ועליו חתמו מעל 600 מוזיקאים ואנשי תעשיית המוזיקה מרחבי העולם. החותמים קוראים לעמיתיהם לחרם על ישראל עד שתציית למשפט הבינלאומי, ומתחייבים לסרב להופיע במוסדות התרבות הישראליים המתוארים במכתב כשותפים לעוול. נונייים (פאטימה נייימה וורנר), ראפרית ומשוררת משיקגו, מופיעה ברשימה.",
+      "summaryEn": "The name Noname appears on the official signatory list of Musicians for Palestine — the open letter published in 2021 and signed by more than 600 musicians and music-industry professionals worldwide. The signatories call on fellow artists to boycott Israel until it complies with international law and pledge to refuse to perform at Israel's 'complicit cultural institutions.' Noname (Fatimah Nyeema Warner), a Chicago rapper and poet, appears on the list.",
+      "tags": [
+        "חרם תרבותי",
+        "עצומה",
+        "מוזיקה"
+      ],
+      "sources": [
+        {
+          "date": "2021",
+          "publisher": "Musicians for Palestine",
+          "title": "רשימת החותמים הרשמית — מכתב Musicians for Palestine (מקור ראשוני)",
+          "url": "https://musiciansforpalestine.net/2021-22-letter/",
+          "quote": "We call for you to join us with your name in refusing to perform at Israel's complicit cultural institutions"
+        },
+        {
+          "date": "2021-05-27",
+          "publisher": "The FADER",
+          "title": "Over 600 artists, including Noname and Questlove, sign open letter in support of Palestinian rights",
+          "url": "https://www.thefader.com/2021/05/27/musicians-for-palestine-open-letter"
+        },
+        {
+          "date": "2021-05-23",
+          "publisher": "Consequence",
+          "title": "600 musicians sign letter calling for Israel boycott in support of Palestine",
+          "url": "https://consequence.net/2021/05/musicians-for-palestine-israel-boycott/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2021",
+      "added": "2026-09-11"
+    },
+    {
+      "id": "inc-20260911-06",
+      "name": "פראוה מונץ'",
+      "aliases": [
+        "Pharoahe Monch",
+        "Troy Donald Jamerson"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": "ניו יורק"
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "השם Pharoahe Monch מופיע ברשימת החותמים הרשמית של Musicians for Palestine — המכתב הפתוח שפורסם ב-2021 ועליו חתמו מעל 600 מוזיקאים ואנשי תעשיית המוזיקה מרחבי העולם. החותמים קוראים לעמיתיהם לחרם על ישראל עד שתציית למשפט הבינלאומי, ומתחייבים לסרב להופיע במוסדות התרבות הישראליים המתוארים במכתב כשותפים לעוול. פראוה מונץ' (טרוי דונלד ג'יימרסון), ראפר מניו יורק, מופיע ברשימה.",
+      "summaryEn": "The name Pharoahe Monch appears on the official signatory list of Musicians for Palestine — the open letter published in 2021 and signed by more than 600 musicians and music-industry professionals worldwide. The signatories call on fellow artists to boycott Israel until it complies with international law and pledge to refuse to perform at Israel's 'complicit cultural institutions.' Pharoahe Monch (Troy Donald Jamerson), a New York rapper and lyricist, appears on the list.",
+      "tags": [
+        "חרם תרבותי",
+        "עצומה",
+        "מוזיקה"
+      ],
+      "sources": [
+        {
+          "date": "2021",
+          "publisher": "Musicians for Palestine",
+          "title": "רשימת החותמים הרשמית — מכתב Musicians for Palestine (מקור ראשוני)",
+          "url": "https://musiciansforpalestine.net/2021-22-letter/",
+          "quote": "We call for you to join us with your name in refusing to perform at Israel's complicit cultural institutions"
+        },
+        {
+          "date": "2021-05-28",
+          "publisher": "Algemeiner",
+          "title": "Questlove, Julian Casablancas Among 600 Musicians in Letter Calling on Artists to Boycott Israel",
+          "url": "https://www.algemeiner.com/2021/05/28/600-musicians-sign-open-letter-calling-on-other-artists-to-boycott-israel-proclaim-solidarity-with-palestinians/"
+        },
+        {
+          "date": "2021-05-23",
+          "publisher": "Consequence",
+          "title": "600 musicians sign letter calling for Israel boycott in support of Palestine",
+          "url": "https://consequence.net/2021/05/musicians-for-palestine-israel-boycott/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2021",
+      "added": "2026-09-11"
+    },
+    {
+      "id": "inc-20260911-07",
+      "name": "ניקולס ז'אר",
+      "aliases": [
+        "Nicolas Jaar",
+        "Nicolás Jaar"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "השם Nicolás Jaar מופיע ברשימת החותמים הרשמית של Musicians for Palestine — המכתב הפתוח שפורסם ב-2021 ועליו חתמו מעל 600 מוזיקאים ואנשי תעשיית המוזיקה מרחבי העולם. החותמים קוראים לעמיתיהם לחרם על ישראל עד שתציית למשפט הבינלאומי, ומתחייבים לסרב להופיע במוסדות התרבות הישראליים המתוארים במכתב כשותפים לעוול. ניקולס ז'אר, מוזיקאי ומפיק אלקטרוני צ'ילאי-אמריקאי, מופיע ברשימה.",
+      "summaryEn": "The name Nicolás Jaar appears on the official signatory list of Musicians for Palestine — the open letter published in 2021 and signed by more than 600 musicians and music-industry professionals worldwide. The signatories call on fellow artists to boycott Israel until it complies with international law and pledge to refuse to perform at Israel's 'complicit cultural institutions.' Nicolas Jaar, a Chilean-American electronic musician and producer, appears on the list.",
+      "tags": [
+        "חרם תרבותי",
+        "עצומה",
+        "מוזיקה"
+      ],
+      "sources": [
+        {
+          "date": "2021",
+          "publisher": "Musicians for Palestine",
+          "title": "רשימת החותמים הרשמית — מכתב Musicians for Palestine (מקור ראשוני)",
+          "url": "https://musiciansforpalestine.net/2021-22-letter/",
+          "quote": "We call for you to join us with your name in refusing to perform at Israel's complicit cultural institutions"
+        },
+        {
+          "date": "2021-05-23",
+          "publisher": "Consequence",
+          "title": "600 musicians sign letter calling for Israel boycott in support of Palestine",
+          "url": "https://consequence.net/2021/05/musicians-for-palestine-israel-boycott/"
+        },
+        {
+          "date": "2021-05-27",
+          "publisher": "The FADER",
+          "title": "Over 600 artists, including Noname and Questlove, sign open letter in support of Palestinian rights",
+          "url": "https://www.thefader.com/2021/05/27/musicians-for-palestine-open-letter"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2021",
+      "added": "2026-09-11"
+    },
+    {
+      "id": "inc-20260907-01",
+      "name": "קן לואץ'",
+      "aliases": [
+        "Ken Loach"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "חתם על התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי קולנוע. החותמים מתחייבים לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים כמעורבים בהפרות זכויות אדם. קן לואץ', במאי בריטי זוכה פרס הדקל הזהב פעמיים בקאן (The Wind That Shakes the Barley, 2006; I, Daniel Blake, 2016), מופיע ברשימת החותמים הרשמית.",
+      "summaryEn": "Signed the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Ken Loach, the British director and two-time Palme d'Or winner at Cannes (The Wind That Shakes the Barley, 2006; I, Daniel Blake, 2016), appears on the official signatory list.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-11",
+          "publisher": "World Socialist Web Site",
+          "title": "Thousands of directors, actors, writers and others pledge not to work with Israeli film institutions 'implicated in genocide'",
+          "url": "https://www.wsws.org/en/articles/2025/09/11/uwys-s11.html"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-25",
+      "added": "2026-09-07"
+    },
+    {
+      "id": "inc-20260907-02",
+      "name": "לנה הידי",
+      "aliases": [
+        "Lena Headey"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "חתמה על התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי קולנוע. החותמים מתחייבים לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים כמעורבים בהפרות זכויות אדם. לנה הידי, שחקנית בריטית הידועה בתפקיד סרסיי לניסטר בסדרת הטלוויזיה Game of Thrones, מופיעה ברשימת החותמים הרשמית.",
+      "summaryEn": "Signed the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Lena Headey, the British actress known for her role as Cersei Lannister in the television series Game of Thrones, appears on the official signatory list.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-11",
+          "publisher": "World Socialist Web Site",
+          "title": "Thousands of directors, actors, writers and others pledge not to work with Israeli film institutions 'implicated in genocide'",
+          "url": "https://www.wsws.org/en/articles/2025/09/11/uwys-s11.html"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-25",
+      "added": "2026-09-07"
+    },
+    {
+      "id": "inc-20260907-03",
+      "name": "מייק לי",
+      "aliases": [
+        "Mike Leigh"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "חתם על התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי קולנוע. החותמים מתחייבים לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים כמעורבים בהפרות זכויות אדם. מייק לי, במאי בריטי זוכה פרס הדקל הזהב בקאן (Secrets & Lies, 1996) ובמאי Vera Drake ו-Mr. Turner, מופיע ברשימת החותמים הרשמית.",
+      "summaryEn": "Signed the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Mike Leigh, the British director and Palme d'Or winner at Cannes (Secrets & Lies, 1996) and director of Vera Drake and Mr. Turner, appears on the official signatory list.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-11",
+          "publisher": "World Socialist Web Site",
+          "title": "Thousands of directors, actors, writers and others pledge not to work with Israeli film institutions 'implicated in genocide'",
+          "url": "https://www.wsws.org/en/articles/2025/09/11/uwys-s11.html"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-25",
+      "added": "2026-09-07"
+    },
+    {
+      "id": "inc-20260907-04",
+      "name": "רבקה הול",
+      "aliases": [
+        "Rebecca Hall"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "חתמה על התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי קולנוע. החותמים מתחייבים לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים כמעורבים בהפרות זכויות אדם. רבקה הול, שחקנית בריטית הידועה מסרטים כגון Vicky Cristina Barcelona ו-The Town, מופיעה ברשימת החותמים הרשמית.",
+      "summaryEn": "Signed the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Rebecca Hall, the British actress known for films such as Vicky Cristina Barcelona and The Town, appears on the official signatory list.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-11",
+          "publisher": "World Socialist Web Site",
+          "title": "Thousands of directors, actors, writers and others pledge not to work with Israeli film institutions 'implicated in genocide'",
+          "url": "https://www.wsws.org/en/articles/2025/09/11/uwys-s11.html"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-25",
+      "added": "2026-09-07"
+    },
+    {
+      "id": "inc-20260907-05",
+      "name": "אמה ד'ארסי",
+      "aliases": [
+        "Emma D'Arcy"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "חתמ/ה על התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי קולנוע. החותמים מתחייבים לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים כמעורבים בהפרות זכויות אדם. אמה ד'ארסי, שחקן/ית בריטי/ת הידוע/ה בתפקיד הנסיכה ריאניירה טרגאריין בסדרת House of the Dragon, מופיע/ה ברשימת החותמים הרשמית.",
+      "summaryEn": "Signed the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Emma D'Arcy, the British actor known for playing Princess Rhaenyra Targaryen in the series House of the Dragon, appears on the official signatory list.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-25",
+          "publisher": "Wikipedia",
+          "title": "Film Workers for Palestine",
+          "url": "https://en.wikipedia.org/wiki/Film_Workers_for_Palestine"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-25",
+      "added": "2026-09-07"
+    },
+    {
+      "id": "inc-20260907-06",
+      "name": "פיטר סרסגורד",
+      "aliases": [
+        "Peter Sarsgaard"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "חתם על התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי קולנוע. החותמים מתחייבים לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים כמעורבים בהפרות זכויות אדם. פיטר סרסגורד, שחקן אמריקאי הידוע מסרטים כגון An Education ו-The Batman, מופיע ברשימת החותמים הרשמית.",
+      "summaryEn": "Signed the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Peter Sarsgaard, the American actor known for films such as An Education and The Batman, appears on the official signatory list.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-11",
+          "publisher": "World Socialist Web Site",
+          "title": "Thousands of directors, actors, writers and others pledge not to work with Israeli film institutions 'implicated in genocide'",
+          "url": "https://www.wsws.org/en/articles/2025/09/11/uwys-s11.html"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-25",
+      "added": "2026-09-07"
+    },
+    {
+      "id": "inc-20260907-07",
+      "name": "פאיאל קפאדיה",
+      "aliases": [
+        "Payal Kapadia"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "הודו",
+        "region": "asia",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "חתמה על התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי קולנוע. החותמים מתחייבים לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים כמעורבים בהפרות זכויות אדם. פאיאל קפאדיה, במאית הודית שזכתה בגראן פרי בפסטיבל קאן 2024 על סרטה All We Imagine as Light, מופיעה ברשימת החותמים הרשמית.",
+      "summaryEn": "Signed the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Payal Kapadia, the Indian filmmaker who won the Grand Prix at the Cannes Film Festival 2024 for her film All We Imagine as Light, appears on the official signatory list.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-25",
+          "publisher": "Wikipedia",
+          "title": "Film Workers for Palestine",
+          "url": "https://en.wikipedia.org/wiki/Film_Workers_for_Palestine"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-25",
+      "added": "2026-09-07"
+    },
+    {
+      "id": "inc-20260907-08",
+      "name": "איימי לו ווד",
+      "aliases": [
+        "Aimee Lou Wood"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "חתמה על התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי קולנוע. החותמים מתחייבים לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים כמעורבים בהפרות זכויות אדם. איימי לו ווד, שחקנית בריטית הידועה מסדרות Sex Education ו-The White Lotus, מופיעה ברשימת החותמים הרשמית.",
+      "summaryEn": "Signed the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Aimee Lou Wood, the British actress known for the series Sex Education and The White Lotus, appears on the official signatory list.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-25",
+          "publisher": "Wikipedia",
+          "title": "Film Workers for Palestine",
+          "url": "https://en.wikipedia.org/wiki/Film_Workers_for_Palestine"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-25",
+      "added": "2026-09-07"
+    },
+    {
+      "id": "inc-20260906-01",
+      "name": "North West Triathlon Club",
+      "aliases": [
+        "NWTC",
+        "מועדון הטריאתלון של צפון-מערב"
+      ],
+      "type": "sport",
+      "actor": "entity",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": "דרי"
+      },
+      "scope": "local",
+      "severity": 3,
+      "status": "review",
+      "summary": "מועדון הטריאתלון North West Triathlon Club, מארגן גביע אירופה בטריאתלון בדרי שבצפון אירלנד, הודיע ב-4 בספטמבר 2026 כי ארבעה טריאתלטים ישראלים שנרשמו למרוץ העילית לגברים לא יורשו להשתתף במרוץ שנועד להיערך באותו סוף שבוע. בהודעתו כתב המועדון: ״הם לא יעמדו בקו הזינוק שלנו, והם לא ישתתפו במרוץ שלנו״, ונימק זאת ב״ערכי״ המועדון ובחששות ל״ביטחון המתחרים והציבור״. המועדון הבהיר כי עמדתו אינה מכוונת נגד איש בשל דתו או מוצאו, אלא נוגעת ל״ייצוג מדינת ישראל בספורט הבינלאומי״. מועצת דרי וסטרבן הביעה תמיכה בתנועת ה-BDS. ההדרה נעשתה על בסיס זהותם הישראלית של הספורטאים.",
+      "summaryEn": "North West Triathlon Club, organizer of the Europe Triathlon Cup in Derry, Northern Ireland, announced on 4 September 2026 that four Israeli triathletes entered in the men's elite race would not be allowed to compete in the event, due to be held that weekend. The club stated: \"They will not be lining up at our start line, and they will not be taking part in our race,\" citing the club's \"values\" and concerns for \"athlete and public safety.\" The club said its position was not directed at anyone because of religion or ethnicity but concerned \"representation of the state of Israel in international sport.\" Derry City and Strabane District Council expressed support for the BDS movement. The exclusion was made on the basis of the athletes' Israeli identity.",
+      "tags": [
+        "ספורט",
+        "חרם",
+        "אפליה",
+        "טריאתלון"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-04",
+          "publisher": "The Times of Israel",
+          "title": "Israeli triathletes barred from race in Northern Ireland after organizer objects",
+          "url": "https://www.timesofisrael.com/israeli-triathletes-barred-from-race-in-northern-ireland-after-organizer-objects",
+          "quote": "They will not be lining up at our start line, and they will not be taking part in our race."
+        },
+        {
+          "date": "2026-09-04",
+          "publisher": "RTÉ",
+          "title": "Israeli athletes will not compete in Derry triathlon",
+          "url": "https://www.rte.ie/news/ulster/2026/0904/1590275-derry-triathlon-israeli-athletes/",
+          "quote": "concerning representation of the state of Israel in international sport and the attempt to present normality on the international sporting stage while Palestinians continue to suffer"
+        },
+        {
+          "date": "2026-09-04",
+          "publisher": "The Algemeiner",
+          "title": "Northern Ireland Triathlon Bans Israeli Athletes Citing Public Safety Concerns, Support for Palestinians",
+          "url": "https://www.algemeiner.com/2026/09/04/northern-ireland-triathlon-bans-israeli-athletes-citing-public-safety-concerns-support-palestinians/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-06",
+      "added": "2026-09-06"
+    },
+    {
+      "id": "inc-20260906-02",
+      "name": "USB – Coordinamento Rai",
+      "aliases": [
+        "USB–RAI",
+        "Unione Sindacale di Base – Rai",
+        "ועד עובדי RAI של איגוד USB"
+      ],
+      "type": "org",
+      "actor": "entity",
+      "parent": "",
+      "location": {
+        "country": "איטליה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "local",
+      "severity": 2,
+      "status": "review",
+      "summary": "USB – Coordinamento Rai, ועד העובדים של האיגוד USB בתאגיד השידור הציבורי האיטלקי RAI, הצטרף לעצומה של הארגון Palestine Action Italia הקוראת להפסיק את מה שהיא מכנה ״תעמולת כיבוש״ בסיקור של RAI, ותוקפת בשמם עיתונאי RAI על סיקורם את ישראל — בהם כתב המזרח התיכון ג׳ובאני בטיסטה ברונורי והמגיש אנטונינו מונטלאונה. ב-10 באוגוסט 2026 פרסם הוועד הצהרה המגינה על העצומה ומכנה את הביקורת עליה ״אנטי-דמוקרטית״. העצומה אספה יותר מ-2,000 חתימות (וכ-4,000 עד ה-24 באוגוסט). נשיא הקהילה היהודית במילאנו, ווקר מגנאני, כינה אותה ״רשימה שחורה של ממש, שמעלה באוב תקופות אפלות בתולדות ארצנו״.",
+      "summaryEn": "USB – Coordinamento Rai, the RAI branch of Italy's USB base union at the public broadcaster RAI, joined a petition by the group Palestine Action Italia calling to end what it terms \"occupation propaganda\" in RAI's coverage and naming RAI journalists over their reporting on Israel — including Middle East correspondent Giovan Battista Brunori and presenter Antonino Monteleone. On 10 August 2026 the union coordination issued a statement defending the petition and calling criticism of it \"antidemocratic.\" The petition gathered more than 2,000 signatures (about 4,000 by 24 August). The president of the Jewish Community of Milan, Walker Meghnagi, called it \"a veritable blacklist that evokes dark periods in our country's history.\"",
+      "tags": [
+        "תקשורת",
+        "עצומה",
+        "איגוד מקצועי",
+        "אנטי-ישראלי"
+      ],
+      "sources": [
+        {
+          "date": "2026-08-12",
+          "publisher": "European Jewish Press",
+          "title": "Italian union targets journalists over Israel coverage",
+          "url": "https://ejpress.org/italian-union-targets-journalists-over-israel-coverage/",
+          "quote": "Enough with propaganda paid for by our taxes! We have the right to public information that does not convey occupation propaganda."
+        },
+        {
+          "date": "2026-08-24",
+          "publisher": "Gaiaitalia.com",
+          "title": "Quattromila firme per la petizione di Palestine Action Italia contro l'informazione Rai sui temi legati ad Israele",
+          "url": "https://www.gaiaitalia.com/2026/08/24/palestine-action-italia-petitione-rai-informazione-israele/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-06",
+      "added": "2026-09-06"
+    },
+    {
+      "id": "inc-20260906-03",
+      "name": "מיכאל בראון",
+      "aliases": [
+        "Michael Brown"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": "נוהייבן"
+      },
+      "scope": "local",
+      "severity": 4,
+      "status": "review",
+      "summary": "ב-1 בספטמבר 2026 גזר בית משפט השלום בווסטמינסטר על מיכאל בראון (45) מנוהייבן, מזרח סאסקס, שמונה שבועות מאסר על תנאי לשנה, 15 ימי שיקום ו-80 שעות עבודה לטובת הציבור. ב-28 בפברואר 2026 פרסם בפייסבוק, תחת פוסט של קמפיין הסולידריות עם פלסטין בברייטון, קריאה לזרוק פירות רקובים ופצצות סירחון על בתי כנסת ועסקים יהודיים, ובסיום שאל: ׳האם למישהו יש מתכון טוב לבית כנסת קלוי?׳ בראון הודה בעבירת שליחת הודעה פוגענית ברשת תקשורת ציבורית. השופט גוזי קבע שמניע גזעי מחמיר את העבירה.",
+      "summaryEn": "On 1 September 2026 Westminster Magistrates' Court sentenced Michael Brown, 45, of Newhaven, East Sussex, to eight weeks in prison suspended for one year, 15 rehabilitation activity days and 80 hours' unpaid work. On 28 February 2026, beneath a Brighton Palestine solidarity campaign post on Facebook, he called for throwing overripe fruit and stink bombs at synagogues and Jewish businesses, ending with: 'Does anyone have a good recipe for roasted synagogue?' Brown pleaded guilty to sending an offensive, indecent, obscene or menacing message over a public communication network. District Judge Goozee found that racial hostility aggravated the offence.",
+      "tags": [
+        "ממצא רשמי",
+        "אנטישמיות",
+        "רשתות חברתיות",
+        "גזר דין"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-01",
+          "publisher": "Brighton and Hove News",
+          "title": "Man who suggested pelting synagogues with eggs is spared jail",
+          "url": "https://www.brightonandhovenews.org/2026/09/01/man-who-suggested-pelting-synagogues-with-eggs-is-spared-jail/",
+          "quote": "Does anyone have a good recipe for roasted synagogue?"
+        },
+        {
+          "date": "2026-09-01",
+          "publisher": "Combat Antisemitism Movement",
+          "title": "East Sussex Man Avoids Jail After Asking for 'Recipe for Roasted Synagogue'",
+          "url": "https://combatantisemitism.org/cam-news/east-sussex-man-avoids-jail-after-asking-for-recipe-for-roasted-synagogue/"
+        },
+        {
+          "date": "2026-09",
+          "publisher": "Jewish News",
+          "title": "Man who asked for 'recipe for roasted synagogue' is spared jail",
+          "url": "https://www.jewishnews.co.uk/man-who-suggested-pelting-synagogues-with-eggs-is-spared-jail/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-01",
+      "added": "2026-09-06"
+    },
+    {
+      "id": "inc-20260906-04",
+      "name": "B&B L'Imbrunire",
+      "aliases": [
+        "L'Imbrunire",
+        "ל'אימברונירה"
+      ],
+      "type": "company",
+      "actor": "entity",
+      "parent": "",
+      "location": {
+        "country": "איטליה",
+        "region": "eu",
+        "city": "קמפיליה ד'אורצ'יה"
+      },
+      "scope": "local",
+      "severity": 3,
+      "status": "review",
+      "summary": "B&B L'Imbrunire, בית הארחה בטוסקנה שבאיטליה, שלח בספטמבר 2026 הודעה לאישה ישראלית שהזמינה חופשת יום-הולדת 30, ובה הצהיר על תמיכתו בקמפיין ה-BDS וסירב לאפשר לה לשהות בנכס בשל לאומה. לאחר שהמארח גילה שהמזמינה ישראלית, הוא שלח הצהרה בכתב: ׳סליחה. אני רואה שאת ישראלית. לשם שקיפות, אנו תומכים בקמפיין BDS (No Room for Genocide). אנחנו לא רוצים לתמוך בשום צורה במדיניות מדינת ישראל.׳ האורחת ביטלה את ההזמנה ופרסמה את ההודעה בגוגל. הנכס לא הגיב לבקשות תגובה.",
+      "summaryEn": "B&B L'Imbrunire, a bed-and-breakfast in Campiglia d'Orcia, Tuscany, sent an Israeli woman who had booked a 30th birthday stay a message in September 2026 declaring its support for the BDS campaign and refusing to accommodate her because she was Israeli. After the host discovered the booker's nationality, the property sent a written statement: 'Excuse me. I see you're Israeli. For transparency, we support the BDS (No Room for Genocide) campaign. We do not want to support the policies of the state of Israel in any way.' The guest cancelled her booking and posted about the exchange on Google. The property did not respond to requests for comment.",
+      "tags": [
+        "חרם",
+        "אפליה",
+        "תיירות",
+        "BDS"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-01",
+          "publisher": "Combat Antisemitism Movement",
+          "title": "Tuscan B&B Sends Traveler From Israel Pro-BDS Message Accusing Country of 'Genocide'",
+          "url": "https://combatantisemitism.org/cam-news/tuscan-bb-sends-traveler-from-israel-pro-bds-message-accusing-country-of-genocide/",
+          "quote": "We support the BDS (No Room for Genocide) campaign. We do not want to support the policies of the state of Israel in any way"
+        },
+        {
+          "date": "2026-09-01",
+          "publisher": "The Jerusalem Post",
+          "title": "Italian B&B faces criticism over anti-Israel message to Israeli visitor",
+          "url": "https://www.jpost.com/diaspora/antisemitism/article-907268"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-01",
+      "added": "2026-09-06"
+    },
+    {
+      "id": "inc-20260906-05",
+      "name": "מוחמד רידואני",
+      "aliases": [
+        "Mohamed Ridouani",
+        "ראש עיריית לובן"
+      ],
+      "type": "person",
+      "actor": "leadership",
+      "parent": "",
+      "location": {
+        "country": "בלגיה",
+        "region": "eu",
+        "city": "לובן"
+      },
+      "scope": "local",
+      "severity": 3,
+      "status": "review",
+      "summary": "ראש עיריית לובן שבבלגיה, מוחמד רידואני, הכריז ב-1 בספטמבר 2026 כי העיר לא תעניק אישור לקיום משחק כדורגל בין קלוב יוניון סאן-ז'ילואז לבין הפועל באר שבע במסגרת ליגת אירופה, שנקבע ל-22 באוקטובר 2026. רידואני הצהיר: ׳יוניון מוזמן לכאן, אבל במקרה זה מדובר בקבוצה ישראלית, ואני עקבי בעמדתי.׳ הוסיף: ׳מטעמי ביטחון ציבורי, הודעתי שגם משחק זה לא יתקיים בלובן.׳ זו אינה פעמו הראשונה: רידואני כבר חייב את נבחרת הנשים הבלגית לעבור מגרש כשסירב לאפשר לה לשחק נגד ישראל בלובן.",
+      "summaryEn": "The mayor of Leuven, Belgium, Mohamed Ridouani, announced on 1 September 2026 that the city would not grant permission for Union Saint-Gilloise to host Hapoel Beersheba in the Europa League on 22 October 2026. Ridouani stated: 'Union is welcome here, but in this case it is an Israeli team, and I am consistent in my position.' He added: 'For reasons of public safety, I announced that this match also cannot take place in Leuven.' This was not the first such refusal: Ridouani had already forced the Belgian women's national team to relocate a match after refusing to allow Israel to play in Leuven.",
+      "tags": [
+        "ספורט",
+        "חרם",
+        "אפליה",
+        "ממשל"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-01",
+          "publisher": "NBC News",
+          "title": "Belgian soccer club blocked by mayor from hosting Israeli opponent in Europa League",
+          "url": "https://www.nbcnews.com/sports/soccer/belgian-football-blocked-mayor-hosting-israeli-opponent-europa-league-rcna595664",
+          "quote": "Union is welcome here, but in this case it is an Israeli team, and I am consistent in my position"
+        },
+        {
+          "date": "2026-09-04",
+          "publisher": "The Jerusalem Post",
+          "title": "Belgian mayor blocks Hapoel Beersheba Europa League match",
+          "url": "https://www.jpost.com/diaspora/antisemitism/article-907570"
+        },
+        {
+          "date": "2026-09-01",
+          "publisher": "Al Jazeera",
+          "title": "Belgian mayor blocks club from hosting Israeli opponent in Europa League",
+          "url": "https://www.aljazeera.com/sports/2026/9/1/belgian-mayor-blocks-club-from-hosting-israeli-opponent-in-europa-league"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-01",
+      "added": "2026-09-06"
+    },
+    {
+      "id": "inc-20260906-06",
+      "name": "מקלמור",
+      "aliases": [
+        "Macklemore",
+        "Ben Haggerty"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": "סיאטל"
+      },
+      "scope": "global",
+      "severity": 2,
+      "status": "review",
+      "summary": "ב-4 בספטמבר 2026 עלה הראפר מקלמור (בן הגרטי, 40) כאקט פתיחה לסיבוב ה-LOOP של אד שירן באצטדיון מטלייף בניו ג'רזי, לבוש כאפייה פלסטינית. הוא ביצע את שיר המחאה הפרו-פלסטיני שלו ׳Hind's Hall׳ (שיצא ב-2024 לתמיכה בהפגנות הקמפוסים נגד ישראל) וקרא ׳חופש לפלסטין!׳, בעוד תמונות מעזה ודגלי פלסטין הוקרנו ברקע. המועצה הישראלית-אמריקאית (IAC) קראה לאד שירן להדיר אותו מהסיבוב. זהו ביטוי נוסף בדפוס עקבי: ב-2024 שחרר את ׳Hind's Hall׳ ואת ׳F***ked Up׳ שהשווה את הגדה המערבית לשואה, ותרם את ההכנסות ל-UNRWA.",
+      "summaryEn": "On 4 September 2026, rapper Macklemore (Ben Haggerty, 40) performed as the opening act on Ed Sheeran's LOOP Tour at MetLife Stadium, New Jersey, wearing a Palestinian keffiyeh. He performed his 2024 pro-Palestinian protest song 'Hind's Hall' and shouted 'Free Palestine!' to the crowd, while footage from Gaza and Palestinian flags were displayed on screen. The Israeli-American Council (IAC) called on Ed Sheeran to drop Macklemore from the tour. This is part of a consistent pattern: in 2024 he released 'Hind's Hall' in support of campus anti-Israel protests and 'F***ked Up' comparing the West Bank to the Holocaust, donating proceeds to UNRWA.",
+      "tags": [
+        "אנטי-ישראלי",
+        "מוזיקה",
+        "התבטאות פומבית"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-05",
+          "publisher": "The Jerusalem Post",
+          "title": "IAC calls for Macklemore removal from Ed Sheeran tour for 'Free Palestine' chant",
+          "url": "https://www.jpost.com/diaspora/antisemitism/article-907681"
+        },
+        {
+          "date": "2026-09-05",
+          "publisher": "Showbiz411",
+          "title": "Ed Sheeran Has a Problem as Opening Act Macklemore, Anti-Israel Rapper, Performs 'Free Free Palestine!' Song at MetLife Stadium",
+          "url": "https://www.showbiz411.com/2026/09/05/ed-sheeran-has-a-problem-as-opening-act-macklemore-anti-israel-rapper-performs-free-free-palestine-song-at-metlife-stadium"
+        },
+        {
+          "date": "2024-05",
+          "publisher": "The Times of Israel",
+          "title": "US rapper Macklemore releases anthem for anti-Israel occupation at Columbia",
+          "url": "https://www.timesofisrael.com/us-rapper-macklemore-releases-anthem-for-anti-israel-occupation-at-columbia/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-05",
+      "added": "2026-09-06"
+    },
     {
       "id": "inc-20260830-01",
       "name": "סיידה חאתון",
