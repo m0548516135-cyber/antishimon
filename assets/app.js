@@ -960,8 +960,8 @@ function render() {
   $("#grid").innerHTML = slice.map(cardHTML).join("") +
     (list.length > shown
       ? '<button class="more" data-act="more">' + t("הצגת") + " " +
-        Math.min(PAGE, list.length - shown) + " " + t("נוספות · נותרו") + " " +
-        (list.length - shown) + "</button>"
+        "<b>" + Math.min(PAGE, list.length - shown) + "</b> " + t("נוספות · נותרו") + " " +
+        "<b>" + (list.length - shown) + "</b></button>"
       : "");
 
   reveal($("#grid"));

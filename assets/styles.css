@@ -88,7 +88,26 @@ body {
   font: 400 16px/1.6 var(--ff);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  position: relative;
 }
+/* אווירה כללית לעמוד: בלי זה הפתיח וקטע התקן נראים כמו שני איים
+   מעוצבים בתוך ים שטוח אחד — גוון וּוינייטה עדינים שממשיכים לאורך כל
+   העמוד, כדי שהרקע ירגיש כמקום אחד ולא כרצף קטעים מנותקים. */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 50% at 50% 0%, color-mix(in srgb, var(--tchelet-2) 7%, transparent), transparent 60%),
+    radial-gradient(ellipse 70% 40% at 100% 100%, color-mix(in srgb, var(--s3) 4%, transparent), transparent 60%);
+}
+[data-theme="light"] body::before {
+  background:
+    radial-gradient(ellipse 90% 50% at 50% 0%, color-mix(in srgb, var(--tchelet) 5%, transparent), transparent 60%),
+    radial-gradient(ellipse 70% 40% at 100% 100%, color-mix(in srgb, var(--s3) 3%, transparent), transparent 60%);
+}
+/* שאר האלמנטים הראשיים (nav, util, tick, foot, gate) כבר מגדירים
+   position ו-z-index משלהם בהמשך הקובץ, שגוברים על פי סדר המפל. רק
+   main היה חסר וצריך לשבת מעל הרקע. */
+main { position: relative; z-index: 1; }
 body.is-locked { overflow: hidden; }
 
 h1, h2, h3, h4, p, ul, ol, figure, dl, dd { margin: 0; }
@@ -497,11 +516,13 @@ a { color: var(--tchelet-2); text-underline-offset: 3px; }
 .star { position: absolute; inset-inline-end: .8rem; inset-block-start: .8rem; color: var(--tchelet-2); font-size: .85rem; }
 
 .more {
-  grid-column: 1 / -1; padding: 1.1rem; border-radius: var(--r);
-  border: 1px dashed var(--line); font-size: .92rem; color: var(--txt-2);
-  transition: background .18s, border-color .18s;
+  grid-column: 1 / -1; padding: 1.2rem; border-radius: var(--r);
+  border: 1.5px dashed color-mix(in srgb, var(--tchelet-2) 35%, var(--line));
+  font-size: .94rem; font-weight: 500; color: var(--tchelet-2);
+  transition: background .18s, border-color .18s, transform .18s var(--e);
 }
-.more:hover { background: var(--card); border-color: var(--txt-3); color: var(--txt); }
+.more:hover { background: color-mix(in srgb, var(--tchelet-2) 8%, var(--card)); border-color: var(--tchelet-2); transform: translateY(-1px); }
+.more b { color: inherit; font-family: var(--fm); }
 
 .void { padding: 4rem 1rem; text-align: center; }
 .void__h { font-family: var(--fd); font-size: 1.6rem; margin-block-end: .6rem; }
@@ -808,22 +829,53 @@ a { color: var(--tchelet-2); text-underline-offset: 3px; }
 
 /* ── כותרת תחתונה ────────────────────────────────────────────────────── */
 
-.foot { position: relative; z-index: 2; margin-block-start: 4rem; background: var(--bg-2); border-block-start: 1px solid var(--line); }
-.foot__in { max-width: var(--max); margin-inline: auto; padding: clamp(2.2rem, 5vw, 3.4rem) var(--pad) 1.6rem; }
-.foot__grid { display: grid; gap: 2rem 2.4rem; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); }
+/* פוטר: היה שלוש עמודות קישורים אפורות בלי שום זהות — בדיוק התלונה
+   הישנה על "נראה כמו תבנית AI". עכשיו יש לו קרקע כהה משלו, מגן דוד
+   כסימן מים (אותו מוטיב שחוזר בפתיח ובקטע התקן, כדי שהעמוד ירגיש
+   כמקום אחד), וקו הדגל כמסגרת עליונה במקום קו הפרדה סתמי. */
+.foot {
+  position: relative; z-index: 2; overflow: clip;
+  margin-block-start: 4rem; background: color-mix(in srgb, #05070C 90%, var(--bg));
+}
+[data-theme="light"] .foot { background: #14181F; }
+.foot::before {
+  content: ""; position: absolute; inset-block-start: 0; inset-inline: 0; block-size: 3px;
+  background: linear-gradient(90deg, var(--tchelet-2) 0 20%, transparent 20% 80%, var(--tchelet-2) 80%);
+  opacity: .7;
+}
+.foot__star {
+  position: absolute; inset-inline-start: -3rem; inset-block-end: -4rem;
+  inline-size: min(26vw, 20rem); block-size: min(26vw, 20rem); pointer-events: none;
+}
+.foot__star path { fill: none; stroke: var(--tchelet-2); stroke-width: 1; opacity: .14; }
+
+.foot__in { position: relative; max-width: var(--max); margin-inline: auto; padding: clamp(2.6rem, 6vw, 4.2rem) var(--pad) 1.8rem; }
+.foot__grid { display: grid; gap: 2rem 2.4rem; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); }
 .foot__col { min-width: 0; }
-.foot__col--brand .logo { margin-block-end: .7rem; }
-.foot__name { font-family: var(--fd); font-size: 1.15rem; }
-.foot__tag { color: var(--txt-2); font-size: .88rem; line-height: 1.6; margin-block-start: .35rem; }
-.foot__stat { font-family: var(--fm); font-size: .72rem; color: var(--txt-3); margin-block-start: .8rem; }
-.foot__h { font-family: var(--fm); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--txt-3); padding-block-end: .7rem; margin-block-end: .3rem; border-block-end: 1px solid var(--line-2); }
+.foot__col--brand .logo { margin-block-end: .9rem; }
+.foot__col--brand .logo svg { width: 38px; height: 38px; }
+.foot__name { font-family: var(--fd); font-weight: 400; font-size: 1.5rem; color: #F1EBDD; }
+.foot__tag { color: #A6B1C7; font-size: .95rem; line-height: 1.65; margin-block-start: .5rem; max-inline-size: 28rem; }
+.foot__stat { font-family: var(--fm); font-size: .78rem; color: var(--tchelet-2); margin-block-start: 1.1rem; }
+.foot__h {
+  font-family: var(--fm); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+  color: #7E8AA8; padding-block-end: .8rem; margin-block-end: .5rem;
+  border-block-end: 2px solid color-mix(in srgb, var(--tchelet-2) 40%, transparent);
+}
 .foot__list { display: flex; flex-direction: column; gap: .1rem; }
-.foot__list .tl { font-size: .88rem; padding-block: .32rem; text-align: start; }
-.foot__col .foot__fine { font-size: .82rem; line-height: 1.65; color: var(--txt-3); }
-.foot__bar { display: flex; flex-wrap: wrap; gap: .8rem 2rem; align-items: baseline; justify-content: space-between; margin-block-start: 2.4rem; padding-block-start: 1.3rem; border-block-start: 1px solid var(--line-2); color: var(--txt-3); font-size: .8rem; line-height: 1.6; }
+.foot__list .tl { font-size: .9rem; padding-block: .34rem; text-align: start; color: #C7CEDE; }
+.foot__list .tl:hover { color: var(--tchelet-2); }
+.foot__col .foot__fine { font-size: .84rem; line-height: 1.7; color: #7E8AA8; }
+.foot__bar {
+  position: relative; display: flex; flex-wrap: wrap; gap: .8rem 2rem; align-items: baseline; justify-content: space-between;
+  margin-block-start: 2.8rem; padding-block-start: 1.5rem; border-block-start: 1px solid rgba(255,255,255,.1);
+  color: #7E8AA8; font-size: .8rem; line-height: 1.6;
+}
 .foot__bar > p:first-child { flex: 1 1 26rem; min-width: 0; }
-.foot__copy { font-family: var(--fm); font-size: .72rem; letter-spacing: .08em; white-space: nowrap; }
+.foot__copy { font-family: var(--fm); font-size: .72rem; letter-spacing: .08em; white-space: nowrap; color: #7E8AA8; }
 .foot__links { display: none; }
+
+@media (max-width: 560px) { .foot__star { inline-size: 60vw; block-size: 60vw; inset-inline-start: -18vw; } }
 
 /* ── טוסט ────────────────────────────────────────────────────────────── */
 
