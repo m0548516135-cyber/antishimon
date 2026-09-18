@@ -9,8 +9,618 @@
    ========================================================================= */
 
 window.ANTISHIMON_INCOMING = {
-  generated: "2026-09-13",
+  generated: "2026-09-18",
   entries: [
+    {
+      "id": "inc-20260918-01",
+      "name": "יחיא אמין",
+      "aliases": [
+        "Yehia Amin"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": "ניו יורק"
+      },
+      "scope": "local",
+      "severity": 4,
+      "status": "review",
+      "summary": "ב-16 בספטמבר 2026 גזר בית המשפט הפלילי של מנהטן (שופטת אלטאה דרייזדייל) על יחיא אמין 90 ימי מאסר, לאחר שהודה בפברואר 2026 באשמה של תקיפה בדרגה שלישית כפשע שנאה. ב-18 באוקטובר 2023, ימים ספורים לאחר מתקפת 7 באוקטובר, עקב אמין בטיימס סקוור אחרי תייר ישראלי בן 23 ועוד ארבעה מלוויו לובשי כיפות, פנה אליהם בקריאות 'חמאס ייהרוג עוד מכם' ו'אלוהים יהרוג את כל היהודים', ולאחר מכן רץ אחרי הישראלי וחבט לו מאחור בגב הראש כשניסה לברוח. אמין הואשם במקור בשבע עבירות; עסקת הטיעון הותירה עבירה אחת. בעת גזר הדין חייך ועשה תנועה שנראתה לנוכחים כסימן 'ניצחון', מה שגרם לשופטת לתהות על כך.",
+      "summaryEn": "On September 16, 2026, the New York City Criminal Court (Judge Althea Drysdale) sentenced Yehia Amin to 90 days in jail after he pleaded guilty to third-degree assault as a hate crime. On October 18, 2023, days after the October 7 attacks, Amin followed a 23-year-old Israeli tourist and four kippah-wearing companions through Times Square, shouting 'Hamas should kill more of you' and 'May Allah kill all the Jews,' then ran up behind the Israeli and punched him in the back of the head as the group tried to escape. Amin originally faced seven charges; a plea agreement with the Manhattan DA reduced the case to one count. During sentencing he smiled and appeared to flash a 'victory sign,' prompting Judge Drysdale to question his demeanor.",
+      "tags": [
+        "ממצא רשמי",
+        "אנטישמיות",
+        "אלימות",
+        "גזר דין"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-16",
+          "publisher": "JNS",
+          "title": "As judge gives him 90 days for attacking Jews in Times Square, man flashes 'victory sign'",
+          "url": "https://www.jns.org/news/u-s-news/as-judge-gives-him-90-days-for-attacking-jews-in-times-square-man-flashes-victory-sign",
+          "quote": "Hamas should kill more of you"
+        },
+        {
+          "date": "2026-09-16",
+          "publisher": "Combat Antisemitism Movement",
+          "title": "Man Who Attacked Jews Near Times Square Shortly After October 7th Gets 90 Days in Jail, Flashes 'Victory' Sign",
+          "url": "https://combatantisemitism.org/cam-news/man-who-attacked-jews-near-times-square-shortly-after-october-7th-gets-90-days-in-jail-flashes-victory-sign/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-16",
+      "added": "2026-09-18"
+    },
+    {
+      "id": "inc-20260918-02",
+      "name": "לארי מונטס",
+      "aliases": [
+        "Larry Montes"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": "ניו יורק"
+      },
+      "scope": "local",
+      "severity": 4,
+      "status": "review",
+      "summary": "ב-9 בספטמבר 2026 הגיש התובע המחוזי של מנהטן, אלווין ל. בראג, כתב אישום כנגד לארי מונטס (46) מהברונקס על תקיפות בשל שנאה בבית הכנסת Central Synagogue במידטאון מנהטן. ב-14 באוגוסט 2026, בעת תפילת שבת שבה השתתפו כ-375 מתפללים, פרץ מונטס לתוך האולם, צעק 'לעזאזל עם היהודים' ו'לא אתחבר לשום בית כנסת מלוכלך', הפיל שני פמוטי כסף טקסיים (גורם לנזק של 7,000 דולר), תקף אישה בת 63 שנפצעה בפניה, ולאחר מכן ירק ופגע בראשו של שומר ביטחון בן 65. ב-19 באוגוסט 2026 הגיש גם משרד המשפטים האמריקאי (DOJ) כתב אישום פדרלי הכולל שני ספרי אישום על פשעי שנאה וספר אישום על השמדת רכוש דתי שגרמה לפציעה גופנית — עם חשיפה מקסימלית של 40 שנות מאסר.",
+      "summaryEn": "On September 9, 2026, Manhattan District Attorney Alvin L. Bragg indicted Larry Montes, 46, of the Bronx, on hate crime charges for attacks at Central Synagogue in Midtown Manhattan. On August 14, 2026, during Shabbat services attended by approximately 375 worshippers, Montes entered the sanctuary, shouted 'fuck the Jews' and 'I will never affiliate with no filthy fucking synagogues,' knocked over two ceremonial silver candlesticks causing $7,000 in damage, punched a 63-year-old woman causing facial lacerations, and spat on and headbutted a 65-year-old security guard. On August 19, 2026 the US Department of Justice also filed a federal indictment charging him with two counts of committing hate crimes and one count of destruction of religious property resulting in bodily injury, carrying a maximum of 40 years in prison.",
+      "tags": [
+        "ממצא רשמי",
+        "אנטישמיות",
+        "אלימות",
+        "כתב אישום",
+        "בית כנסת"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-09",
+          "publisher": "Manhattan District Attorney's Office",
+          "title": "D.A. Bragg Announces Hate Crime Indictment Of Man For Antisemitic And Anti-Black Attacks At Central Synagogue",
+          "url": "https://manhattanda.org/d-a-bragg-announces-hate-crime-indictment-of-man-for-antisemitic-and-anti-black-attacks-at-central-synagogue/",
+          "quote": "yelling antisemitic remarks as congregants attempted to worship"
+        },
+        {
+          "date": "2026-08-19",
+          "publisher": "US Department of Justice",
+          "title": "New York City Man Charged with Federal Hate Crimes for Attack at Manhattan Synagogue",
+          "url": "https://www.justice.gov/opa/pr/new-york-city-man-charged-federal-hate-crimes-attack-manhattan-synagogue",
+          "quote": "fuck the Jews"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-09-09",
+      "added": "2026-09-18"
+    },
+    {
+      "id": "inc-20260918-03",
+      "name": "מריאן פייתפול",
+      "aliases": [
+        "Marianne Faithfull"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "השם מריאן פייתפול מופיע ברשימת החותמים הרשמית של Musicians for Palestine — המכתב הפתוח שפורסם בשנת 2021 ועליו חתמו מעל 600 מוזיקאים ואנשי תעשיית המוזיקה מרחבי העולם. החותמים קוראים לעמיתיהם לסרב להופיע בישראל ולחרם מוסדות התרבות הישראליים המתוארים במכתב כשותפים לעוול, עד שישראל תציית למשפט הבינלאומי. פייתפול, זמרת ושחקנית בריטית אגדית הידועה מזיקוק שנות ה-60 עם The Rolling Stones ומקאמבק הוגדר עם האלבום Broken English (1979), נפטרה ב-30 בינואר 2025.",
+      "summaryEn": "The name Marianne Faithfull appears on the official signatory list of Musicians for Palestine — the open letter published in 2021 and signed by more than 600 musicians and music-industry professionals worldwide. The signatories call on fellow artists to refuse to perform in Israel and to boycott Israeli cultural institutions described as complicit in human-rights violations, until Israel complies with international law. Faithfull was a legendary British singer and actress, celebrated for her 1960s association with The Rolling Stones and her acclaimed comeback with the album Broken English (1979). She passed away on January 30, 2025.",
+      "tags": [
+        "חרם תרבותי",
+        "עצומה",
+        "מוזיקה"
+      ],
+      "sources": [
+        {
+          "date": "2021",
+          "publisher": "Musicians for Palestine",
+          "title": "רשימת החותמים הרשמית — מכתב Musicians for Palestine (מקור ראשוני)",
+          "url": "https://musiciansforpalestine.net/2021-22-letter/",
+          "quote": "We call for you to join us with your name in refusing to perform at Israel's complicit cultural institutions"
+        },
+        {
+          "date": "2022",
+          "publisher": "NME",
+          "title": "FKA twigs, Denzel Curry and Marianne Faithfull join Musicians For Palestine pledge",
+          "url": "https://www.nme.com/news/music/fka-twigs-denzel-curry-and-marianne-faithfull-join-musicians-for-palestine-pledge-3318163"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2022",
+      "added": "2026-09-18"
+    },
+    {
+      "id": "inc-20260918-04",
+      "name": "UB40",
+      "aliases": [
+        "UB 40"
+      ],
+      "type": "entertainment",
+      "actor": "entity",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": "בירמינגהם"
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "הלהקה UB40 מופיעה ברשימת החותמים הרשמית של Musicians for Palestine — המכתב הפתוח שפורסם בשנת 2021 ועליו חתמו מעל 600 מוזיקאים ואנשי תעשיית המוזיקה מרחבי העולם. החותמים קוראים לעמיתיהם לסרב להופיע בישראל ולחרם מוסדות התרבות הישראליים עד שישראל תציית למשפט הבינלאומי. UB40 הם להקת רגאי-פופ בריטית מבירמינגהם, ידועה בהיטים עולמיים כ-Red Red Wine (1983) ו-Kingston Town (1990).",
+      "summaryEn": "The band UB40 appears on the official signatory list of Musicians for Palestine — the open letter published in 2021 and signed by more than 600 musicians and music-industry professionals worldwide. The signatories call on fellow artists to refuse to perform in Israel and to boycott Israeli cultural institutions described as complicit in human-rights violations, until Israel complies with international law. UB40 are a British reggae-pop band from Birmingham, known for their global hits Red Red Wine (1983) and Kingston Town (1990).",
+      "tags": [
+        "חרם תרבותי",
+        "עצומה",
+        "מוזיקה"
+      ],
+      "sources": [
+        {
+          "date": "2021",
+          "publisher": "Musicians for Palestine",
+          "title": "רשימת החותמים הרשמית — מכתב Musicians for Palestine (מקור ראשוני)",
+          "url": "https://musiciansforpalestine.net/2021-22-letter/",
+          "quote": "We call for you to join us with your name in refusing to perform at Israel's complicit cultural institutions"
+        },
+        {
+          "date": "2022",
+          "publisher": "NME",
+          "title": "FKA twigs, Denzel Curry and Marianne Faithfull join Musicians For Palestine pledge",
+          "url": "https://www.nme.com/news/music/fka-twigs-denzel-curry-and-marianne-faithfull-join-musicians-for-palestine-pledge-3318163"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2022",
+      "added": "2026-09-18"
+    },
+    {
+      "id": "inc-20260914-01",
+      "name": "ואסים א.מ.",
+      "aliases": [
+        "Wassim Al M.",
+        "Wassim Al M"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "גרמניה",
+        "region": "eu",
+        "city": "ברלין"
+      },
+      "scope": "local",
+      "severity": 4,
+      "status": "review",
+      "summary": "ב-21 בפברואר 2025 תקף ואסים א.מ., אזרח סורי, תייר ספרדי בן 30 בסכין ליד אנדרטת ״יד לזכר יהודי אירופה הנרצחים״ (מה שמכונה ״יד וושם הברלינאי״) בברלין, בזמן שחיפש ישראלים או יהודים לפגוע בהם. בית המשפט הגבוה לאזורים של ברלין (Kammergericht) הרשיע אותו ב-5 במרץ 2026 בניסיון רצח בשם ארגון המדינה האסלאמית (דאעש) וגזר עליו 13 שנות מאסר. השופטת דוריס הוש קבעה כי א.מ. ״חיפש להתנקש בישראלים או באנשי דת יהודית״. הקורבן, שאינו יהודי, שרד לאחר ניתוח דחוף.",
+      "summaryEn": "On February 21, 2025, Wassim Al M., a Syrian citizen, stabbed a 30-year-old Spanish tourist near the Memorial to the Murdered Jews of Europe in Berlin while seeking to target Israelis or Jews. Berlin's Higher Regional Court (Kammergericht) convicted him on March 5, 2026, for attempted murder in the name of the Islamic State and sentenced him to 13 years in prison. Presiding judge Doris Husch stated that Al M. had been looking to target 'Israelis or people of the Jewish faith.' The non-Jewish victim survived after emergency surgery.",
+      "tags": [
+        "ממצא רשמי",
+        "אנטישמיות",
+        "גזר דין",
+        "טרור",
+        "דאעש"
+      ],
+      "sources": [
+        {
+          "date": "2026-03-05",
+          "publisher": "The Times of Israel",
+          "title": "Syrian man handed 13-year sentence for Berlin Holocaust memorial stabbing",
+          "url": "https://www.timesofisrael.com/syrian-man-handed-13-year-sentence-for-berlin-holocaust-memorial-stabbing/",
+          "quote": "had been looking to target 'Israelis or people of the Jewish faith'"
+        },
+        {
+          "date": "2026-03-05",
+          "publisher": "France 24",
+          "title": "Syrian jailed over stabbing at Berlin Holocaust memorial",
+          "url": "https://www.france24.com/en/live-news/20260305-syrian-jailed-over-stabbing-at-berlin-holocaust-memorial"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-03-05",
+      "added": "2026-09-14"
+    },
+    {
+      "id": "inc-20260914-02",
+      "name": "ח׳לף א.",
+      "aliases": [
+        "Khalaf A.",
+        "Khalaf A"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "גרמניה",
+        "region": "eu",
+        "city": "ברלין"
+      },
+      "scope": "local",
+      "severity": 4,
+      "status": "review",
+      "summary": "ב-21 באוגוסט 2026 הגיש התובע הפדרלי הראשי של גרמניה (Generalbundesanwalt) כתב אישום נגד ח׳לף א., אזרח סורי, בגין סיוע לניסיון הרצח שבוצע ב-21 בפברואר 2025 ליד אנדרטת ״יד לזכר יהודי אירופה הנרצחים״ בברלין. לפי כתב האישום, ח׳לף א. בילה את אחר הצהריים שלפני המתקפה עם מבצע הפיגוע, ואסים א.מ., סייע לו לתכנן את הפעולה ועודד אותו לבצעה.",
+      "summaryEn": "On August 21, 2026, Germany's chief federal prosecutor (Generalbundesanwalt) filed an indictment against Khalaf A., a Syrian citizen, for aiding and abetting the attempted murder carried out on February 21, 2025 near the Memorial to the Murdered Jews of Europe in Berlin. According to the indictment, Khalaf A. spent the afternoon before the attack with the perpetrator, Wassim Al M., helping him plan the operation and encouraging him to carry it out.",
+      "tags": [
+        "ממצא רשמי",
+        "אנטישמיות",
+        "כתב אישום",
+        "טרור",
+        "דאעש"
+      ],
+      "sources": [
+        {
+          "date": "2026-09-12",
+          "publisher": "The Jerusalem Post",
+          "title": "Syrian national indicted for aiding 2025 Berlin Holocaust Memorial stabbing",
+          "url": "https://www.jpost.com/diaspora/antisemitism/article-908407"
+        },
+        {
+          "date": "2026-09-12",
+          "publisher": "The Times of Israel",
+          "title": "Berlin police arrest man suspected of encouraging Holocaust Memorial stabbing attack",
+          "url": "https://www.timesofisrael.com/berlin-police-arrest-man-suspected-of-encouraging-holocaust-memorial-stabbing-attack/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-08-21",
+      "added": "2026-09-14"
+    },
+    {
+      "id": "inc-20260914-03",
+      "name": "ריאל מדריד",
+      "aliases": [
+        "Real Madrid",
+        "Real Madrid CF"
+      ],
+      "type": "sport",
+      "actor": "entity",
+      "parent": "",
+      "location": {
+        "country": "ספרד",
+        "region": "eu",
+        "city": "מדריד"
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "review",
+      "summary": "ב-6 במרץ 2026 קנסה UEFA את ריאל מדריד ב-15,000 יורו וצווה על סגירת 500 כיסאות בטריבונה הדרומית התחתונה של אצטדיון ברנבאו (בהתלייה לשנה כתקופת מבחן), בעקבות אוהד שביצע הצדעת ״זיג היל״ בטריבונות במהלך משחק ליגת האלופות מול בנפיקה ב-25 בפברואר 2026. האוהד הוצא מייד מהאצטדיון בידי אנשי האבטחה וקיבל איסור כניסה לכל החיים. הנהלת הקלוב פרסמה גינוי רשמי.",
+      "summaryEn": "On March 6, 2026, UEFA fined Real Madrid €15,000 and ordered the closure of 500 seats in the lower south stand of the Santiago Bernabéu (suspended for one year on probation) after a fan performed a Nazi salute in the stands during a Champions League match against Benfica on February 25, 2026. The fan was immediately ejected by stadium security and received a lifetime ban. The club issued a formal condemnation.",
+      "tags": [
+        "ממצא רשמי",
+        "ספורט",
+        "נאציזם",
+        "קנס UEFA"
+      ],
+      "sources": [
+        {
+          "date": "2026-03-06",
+          "publisher": "Goal.com",
+          "title": "Real Madrid hit with UEFA fine after fan spotted doing Nazi salute during contentious Benfica clash",
+          "url": "https://www.goal.com/en/lists/real-madrid-uefa-fine-nazi-salute-benfica-vinicius-jr-racism/bltf63d95d006468aa4"
+        },
+        {
+          "date": "2026-03-06",
+          "publisher": "Yahoo Sports",
+          "title": "Real Madrid hit with UEFA sanction for nazi salute",
+          "url": "https://sports.yahoo.com/articles/real-madrid-hit-uefa-sanction-114000450.html"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2026-03-06",
+      "added": "2026-09-14"
+    },
+    {
+      "id": "inc-20260914-04",
+      "name": "אריק קנטונה",
+      "aliases": [
+        "Eric Cantona",
+        "Éric Cantona"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "צרפת",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "אריק קנטונה מופיע ברשימת החותמים הרשמית של התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי תעשיית הקולנוע. ההתחייבות היא לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים בה כמעורבים בהפרות זכויות אדם. קנטונה, כוכב כדורגל צרפתי לשעבר — אגדת מנצ'סטר יונייטד בשנות ה-90 — ניהל גם קריירת שחקן קולנוע מקבילה ומופיע ברשימה.",
+      "summaryEn": "Eric Cantona appears on the official signatory list of the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Cantona is a legendary former French footballer, best known for his iconic years at Manchester United in the 1990s, and has also pursued a parallel acting career.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה",
+        "ספורט"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-25",
+          "publisher": "Just Jared",
+          "title": "5,000+ Stars Have Now Joined Pledge to Boycott Israeli Film Institutions, Including Toni Collette, Andrew Garfield, & More",
+          "url": "https://www.justjared.com/2025/09/25/5000-stars-have-now-joined-pledge-to-boycott-israeli-film-institutions-including-toni-collette-andrew-garfield-more/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-08",
+      "added": "2026-09-14"
+    },
+    {
+      "id": "inc-20260914-05",
+      "name": "מייקל מור",
+      "aliases": [
+        "Michael Moore"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "מייקל מור מופיע ברשימת החותמים הרשמית של התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי תעשיית הקולנוע. ההתחייבות היא לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים בה כמעורבים בהפרות זכויות אדם. מור, יוצר הסרטים התיעודיים האמריקאי, ידוע בסרטים Bowling for Columbine (2002) ו-Fahrenheit 9/11 (2004) — מהסרטים התיעודיים הנמכרים ביותר בהיסטוריה — ומופיע ברשימה.",
+      "summaryEn": "Michael Moore appears on the official signatory list of the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Moore is an American documentary filmmaker known for Bowling for Columbine (2002) and Fahrenheit 9/11 (2004), among the highest-grossing documentaries in history.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-09",
+          "publisher": "NPR",
+          "title": "Emma Stone, Ava DuVernay, 2,000 others join Israeli film company boycott",
+          "url": "https://www.npr.org/2025/09/09/nx-s1-5535578/hollywood-stars-boycott-israeli-film-companies-in-response-to-gaza-crisis"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-08",
+      "added": "2026-09-14"
+    },
+    {
+      "id": "inc-20260914-06",
+      "name": "בריאן אינו",
+      "aliases": [
+        "Brian Eno"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "בריטניה",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "בריאן אינו מופיע ברשימת החותמים הרשמית של התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי תעשיית הקולנוע. ההתחייבות היא לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים בה כמעורבים בהפרות זכויות אדם. אינו, מוזיקאי ומפיק בריטי, ידוע כמפיק האלבומים של U2 (The Joshua Tree, Achtung Baby) ושל דייוויד בואי (הטרילוגיה הברלינאית), ועל תרומתו המכוננת למוזיקה האמביינטית.",
+      "summaryEn": "Brian Eno appears on the official signatory list of the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Eno is a legendary British musician and record producer, known for producing seminal albums by U2 (The Joshua Tree, Achtung Baby) and David Bowie (the Berlin Trilogy), and for pioneering ambient music.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה",
+        "מוזיקה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-25",
+          "publisher": "Just Jared",
+          "title": "5,000+ Stars Have Now Joined Pledge to Boycott Israeli Film Institutions, Including Toni Collette, Andrew Garfield, & More",
+          "url": "https://www.justjared.com/2025/09/25/5000-stars-have-now-joined-pledge-to-boycott-israeli-film-institutions-including-toni-collette-andrew-garfield-more/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-08",
+      "added": "2026-09-14"
+    },
+    {
+      "id": "inc-20260914-07",
+      "name": "ג׳ושואה אופנהיימר",
+      "aliases": [
+        "Joshua Oppenheimer"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "ג׳ושואה אופנהיימר מופיע ברשימת החותמים הרשמית של התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי תעשיית הקולנוע. ההתחייבות היא לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים בה כמעורבים בהפרות זכויות אדם. אופנהיימר, במאי תיעודי אמריקאי-בריטי, ידוע בסרטים The Act of Killing (2012, מועמד לאוסקר) ו-The Look of Silence (2014), העוסקים בטבח ההמוני באינדונזיה.",
+      "summaryEn": "Joshua Oppenheimer appears on the official signatory list of the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Oppenheimer is an American-British documentary filmmaker known for The Act of Killing (2012, Oscar-nominated) and The Look of Silence (2014), both examining the Indonesian mass killings.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-11",
+          "publisher": "World Socialist Web Site",
+          "title": "Thousands of directors, actors, writers and others pledge not to work with Israeli film institutions 'implicated in genocide'",
+          "url": "https://www.wsws.org/en/articles/2025/09/11/uwys-s11.html"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-08",
+      "added": "2026-09-14"
+    },
+    {
+      "id": "inc-20260914-08",
+      "name": "קסאוויה דולן",
+      "aliases": [
+        "Xavier Dolan",
+        "Xavier Dolan-Tadros"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "קנדה",
+        "region": "na",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "קסאוויה דולן מופיע ברשימת החותמים הרשמית של התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי תעשיית הקולנוע. ההתחייבות היא לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים בה כמעורבים בהפרות זכויות אדם. דולן, במאי קנדי שהחל לביים בגיל 19, ידוע בסרטים כמו I Killed My Mother (2009) ו-Mommy (2014), וזכה בפרס הז'ורי בפסטיבל קאן 2014.",
+      "summaryEn": "Xavier Dolan appears on the official signatory list of the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Dolan is a Canadian filmmaker who began directing at 19, known for I Killed My Mother (2009) and Mommy (2014), and recipient of the Jury Prize at Cannes 2014.",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-09",
+          "publisher": "NPR",
+          "title": "Emma Stone, Ava DuVernay, 2,000 others join Israeli film company boycott",
+          "url": "https://www.npr.org/2025/09/09/nx-s1-5535578/hollywood-stars-boycott-israeli-film-companies-in-response-to-gaza-crisis"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-08",
+      "added": "2026-09-14"
+    },
+    {
+      "id": "inc-20260914-09",
+      "name": "דברה ווינגר",
+      "aliases": [
+        "Debra Winger"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "ארצות הברית",
+        "region": "na",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "דברה ווינגר מופיעה ברשימת החותמים הרשמית של התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי תעשיית הקולנוע. ההתחייבות היא לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים בה כמעורבים בהפרות זכויות אדם. ווינגר, שחקנית אמריקאית ותיקה, ידועה בתפקידיה בסרטים An Officer and a Gentleman (1982) ו-Terms of Endearment (1983) — שני הסרטים זיכו אותה במינויים לאוסקר.",
+      "summaryEn": "Debra Winger appears on the official signatory list of the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Winger is a veteran American actress known for her Oscar-nominated roles in An Officer and a Gentleman (1982) and Terms of Endearment (1983).",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-25",
+          "publisher": "Just Jared",
+          "title": "5,000+ Stars Have Now Joined Pledge to Boycott Israeli Film Institutions, Including Toni Collette, Andrew Garfield, & More",
+          "url": "https://www.justjared.com/2025/09/25/5000-stars-have-now-joined-pledge-to-boycott-israeli-film-institutions-including-toni-collette-andrew-garfield-more/"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-08",
+      "added": "2026-09-14"
+    },
+    {
+      "id": "inc-20260914-10",
+      "name": "אקי קאורישמאקי",
+      "aliases": [
+        "Aki Kaurismäki",
+        "Aki Kaurismaeki"
+      ],
+      "type": "person",
+      "actor": "individual",
+      "parent": "",
+      "location": {
+        "country": "פינלנד",
+        "region": "eu",
+        "city": ""
+      },
+      "scope": "global",
+      "severity": 3,
+      "status": "verified",
+      "summary": "אקי קאורישמאקי מופיע ברשימת החותמים הרשמית של התחייבות Film Workers for Palestine, שפורסמה ב-8 בספטמבר 2025 ועליה חתמו למעלה מ-5,000 אנשי תעשיית הקולנוע. ההתחייבות היא לסרב לעבוד עם מוסדות קולנוע ישראליים המתוארים בה כמעורבים בהפרות זכויות אדם. קאורישמאקי, במאי פיני מחולל פרסים, ידוע בסרטים The Man Without a Past (2002, מועמד לאוסקר, פרס הדקל הכספי בקאן) ו-Fallen Leaves (2023, פרס הז'ורי בקאן).",
+      "summaryEn": "Aki Kaurismäki appears on the official signatory list of the Film Workers for Palestine pledge, published on September 8, 2025, in which over 5,000 film-industry workers committed to refuse to work with Israeli film institutions described as complicit in human-rights violations. Kaurismäki is a celebrated Finnish director known for The Man Without a Past (2002, Oscar-nominated, Grand Prix at Cannes) and Fallen Leaves (2023, Jury Prize at Cannes).",
+      "tags": [
+        "חרם תרבותי",
+        "קולנוע",
+        "עצומה"
+      ],
+      "sources": [
+        {
+          "date": "2025-09-08",
+          "publisher": "Film Workers for Palestine",
+          "title": "רשימת החותמים הרשמית (מקור ראשוני)",
+          "url": "https://filmworkersforpalestine.org/"
+        },
+        {
+          "date": "2025-09-11",
+          "publisher": "World Socialist Web Site",
+          "title": "Thousands of directors, actors, writers and others pledge not to work with Israeli film institutions 'implicated in genocide'",
+          "url": "https://www.wsws.org/en/articles/2025/09/11/uwys-s11.html"
+        }
+      ],
+      "alternatives": [],
+      "updated": "2025-09-08",
+      "added": "2026-09-14"
+    },
     {
       "id": "inc-20260913-01",
       "name": "ממשלת בריטניה — איסור ייבוא מהתנחלויות",
