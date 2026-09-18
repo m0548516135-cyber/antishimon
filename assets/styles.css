@@ -1226,19 +1226,20 @@ body.is-gated { overflow: hidden; }
   .flagband__star { inline-size: 13px; block-size: 13px; }
 }
 
-/* מגן דוד בלוגו. היה קו דק בשקיפות נמוכה שנעלם כמעט לגמרי בגודל
-   פייביקון — בדיוק התלונה שהמשתמש העלה: "אין בלוגו שום דבר ישראלי".
-   עכשיו זה הצורה הדומיננטית של האייקון, לא רמז ברקע. */
+/* מגן דוד בלוגו — הסמל היחיד באייקון, לא רקע מאחורי משהו אחר.
+   גרסה קודמת ערבבה אותו עם עמודות מקרא חומרה בתוך אותו סמל, ויצאה
+   עמוסה ולא ברורה. עכשיו זו צורה אחת נקייה: קו עבה מעוגל עם מילוי
+   עדין, קריאה גם בגודל פייביקון אמיתי (32px). */
 .logo__star path {
   fill: var(--tchelet-2);
-  fill-opacity: .2;
+  fill-opacity: .12;
   stroke: var(--tchelet-2);
-  stroke-width: 2.2;
+  stroke-width: 2.4;
   stroke-linejoin: round;
   opacity: 1;
   transition: fill-opacity .25s ease;
 }
-.brand:hover .logo__star path { fill-opacity: .38; }
+.brand:hover .logo__star path { fill-opacity: .3; }
 
 /* ישראל על מפת המקומות — צורה אחרת מכל נקודה אחרת, כי היא אינה
    נקודת מדידה אלא נקודת הייחוס. */
